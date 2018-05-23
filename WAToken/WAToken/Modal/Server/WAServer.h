@@ -43,7 +43,7 @@ typedef void (^Callback)(id obj);
 
 /****************************************************************************************/
 
-#pragma mark - 接口
+#pragma mark - 系统管理
 
 @interface WAServer : NSObject
 
@@ -61,6 +61,20 @@ typedef void (^Callback)(id obj);
 
 /****************************************************************************************/
 
-- (void)loginWithName:(NSString *)name pass:(NSString *)pass callback:(Callback)cb;
+#pragma mark - 接口管理
+
+// 登陆
+- (void)loginWithName:(NSString *)name
+                 pass:(NSString *)pass
+             callback:(Callback)cb;
+
+// 注册
+- (void)registerWithName:(NSString *)name
+                  mobile:(NSString *)mobile
+              invitation:(NSString *)invitation
+                    pass:(NSString *)pass
+                callback:(Callback)cb;
+
+
 
 @end

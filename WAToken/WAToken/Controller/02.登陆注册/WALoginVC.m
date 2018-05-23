@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
-@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+@property (weak, nonatomic) IBOutlet UIButton    *submitBtn;
 
 @end
 
@@ -47,6 +47,10 @@
     _submitBtn.layer.masksToBounds = YES;
 }
 
+/*****************************************************************************************************/
+
+#pragma mark - delegate
+
 // 键盘返回按钮
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSInteger tag = textField.tag;
@@ -60,6 +64,10 @@
     
     return YES;
 }
+
+/*****************************************************************************************************/
+
+#pragma mark - button action
 
 // 点击屏幕
 - (IBAction)tapInScreen:(UITapGestureRecognizer *)sender {
@@ -129,6 +137,9 @@
 
 /*****************************************************************************************************/
 
+#pragma mark - test issue
+
+// 测试登陆
 - (void)testLogin {
     NSLog(@"用户: %@, 密码: %@", _textField1.text, _textField2.text);
 }

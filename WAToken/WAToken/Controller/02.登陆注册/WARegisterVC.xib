@@ -12,12 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WARegisterVC">
             <connections>
                 <outlet property="checkBtn" destination="SaD-S2-R67" id="UoJ-Ct-NN3"/>
-                <outlet property="confirmcodeTextField" destination="hxE-OX-hat" id="dFU-zE-Q9a"/>
-                <outlet property="invitationcodeTextField" destination="ANy-Aj-rUf" id="YUz-3q-lJ1"/>
-                <outlet property="logincodeTextField" destination="Fc8-C7-wdU" id="BAY-RN-wj9"/>
-                <outlet property="mobileTextField" destination="Rwt-3D-9De" id="Gmv-kd-Dur"/>
-                <outlet property="nicknameTextField" destination="YcI-QR-XRz" id="bQQ-Y0-3Bs"/>
                 <outlet property="submitBtn" destination="fhZ-OU-sfQ" id="cEk-5g-AMX"/>
+                <outlet property="textField1" destination="YcI-QR-XRz" id="0Wz-kN-sdd"/>
+                <outlet property="textField2" destination="Rwt-3D-9De" id="xZU-pz-68V"/>
+                <outlet property="textField3" destination="ANy-Aj-rUf" id="Nsn-Sb-Q2t"/>
+                <outlet property="textField4" destination="Fc8-C7-wdU" id="N5G-Gk-CtZ"/>
+                <outlet property="textField5" destination="hxE-OX-hat" id="XvX-Ts-5C1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -123,6 +123,9 @@
                             <state key="normal" title="《WAToken区块链平台服务协议》">
                                 <color key="titleColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="gotoAgreementVC:" destination="-1" eventType="touchUpInside" id="ke4-dF-JoW"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9i-lM-ylq">
                             <rect key="frame" x="111" y="456" width="115" height="29"/>
@@ -131,11 +134,17 @@
                             <state key="normal" title="我已经阅读并同意">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="tapInCheckBox:" destination="-1" eventType="touchUpInside" id="XgF-BQ-nbs"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaD-S2-R67">
                             <rect key="frame" x="77" y="459" width="25" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="btn_hook_on"/>
+                            <connections>
+                                <action selector="tapInCheckBox:" destination="-1" eventType="touchUpInside" id="n8I-eC-xlm"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhZ-OU-sfQ">
                             <rect key="frame" x="25" y="518" width="250" height="40"/>
@@ -151,12 +160,15 @@
                         <constraint firstAttribute="height" constant="600" id="PMR-m3-SRz"/>
                         <constraint firstAttribute="width" constant="300" id="qpC-6u-9MW"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="9pe-Zz-doK" appends="YES" id="uta-ik-j4g"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuX-r9-o93" userLabel="NavigationBar">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-Oq-gOV">
-                            <rect key="frame" x="9" y="23" width="14" height="25"/>
+                            <rect key="frame" x="9" y="20" width="14" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="btn_back_blue"/>
                             <connections>
@@ -164,9 +176,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFg-ku-qrx">
-                            <rect key="frame" x="27" y="20" width="33" height="32"/>
+                            <rect key="frame" x="27" y="17" width="33" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="返回">
                                 <color key="titleColor" red="0.031372549020000001" green="0.29803921570000003" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -181,6 +193,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="iuX-r9-o93" secondAttribute="trailing" id="3NZ-lD-zuI"/>
                 <constraint firstItem="fD4-mh-Ujr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cia-jo-Paa"/>
@@ -190,6 +203,11 @@
             </constraints>
             <point key="canvasLocation" x="50.5" y="53.5"/>
         </view>
+        <tapGestureRecognizer id="9pe-Zz-doK">
+            <connections>
+                <action selector="tapInScreen:" destination="-1" id="eO0-BJ-uOM"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="btn_back_blue" width="14" height="25"/>

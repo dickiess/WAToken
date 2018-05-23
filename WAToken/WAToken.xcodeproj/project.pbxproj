@@ -94,6 +94,11 @@
 		1B00955A20B558DE002E7C99 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00950220B558DE002E7C99 /* Factory.m */; };
 		1B00955B20B558DE002E7C99 /* SelwynFormBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00950720B558DE002E7C99 /* SelwynFormBaseViewController.m */; };
 		1B00955D20B55973002E7C99 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B00955C20B55973002E7C99 /* Default-568h@2x.png */; };
+		1B00956020B567A6002E7C99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B00955F20B567A6002E7C99 /* Foundation.framework */; };
+		1B00956220B567AB002E7C99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B00956120B567AB002E7C99 /* UIKit.framework */; };
+		1B00956420B567B1002E7C99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B00956320B567B1002E7C99 /* AVFoundation.framework */; };
+		1B00956920B56D43002E7C99 /* WAAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00956720B56D43002E7C99 /* WAAgreementVC.m */; };
+		1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B00956820B56D43002E7C99 /* WAAgreementVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +297,12 @@
 		1B00950720B558DE002E7C99 /* SelwynFormBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelwynFormBaseViewController.m; sourceTree = "<group>"; };
 		1B00950820B558DE002E7C99 /* SelwynExpandableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelwynExpandableTextView.h; sourceTree = "<group>"; };
 		1B00955C20B55973002E7C99 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1B00955F20B567A6002E7C99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B00956120B567AB002E7C99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B00956320B567B1002E7C99 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1B00956620B56D43002E7C99 /* WAAgreementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAAgreementVC.h; sourceTree = "<group>"; };
+		1B00956720B56D43002E7C99 /* WAAgreementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAAgreementVC.m; sourceTree = "<group>"; };
+		1B00956820B56D43002E7C99 /* WAAgreementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAAgreementVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +310,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B00956420B567B1002E7C99 /* AVFoundation.framework in Frameworks */,
+				1B00956220B567AB002E7C99 /* UIKit.framework in Frameworks */,
+				1B00956020B567A6002E7C99 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +340,7 @@
 				1B00942F20B55442002E7C99 /* WATokenTests */,
 				1B00943A20B55442002E7C99 /* WATokenUITests */,
 				1B00941520B55440002E7C99 /* Products */,
+				1B00955E20B567A6002E7C99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,6 +399,7 @@
 			children = (
 				1B00945520B558DD002E7C99 /* 01.开屏 */,
 				1B00944C20B558DD002E7C99 /* 02.登陆注册 */,
+				1B00956520B56D12002E7C99 /* 03.服务协议 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,8 +439,8 @@
 		1B00945A20B558DE002E7C99 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				1B00945B20B558DE002E7C99 /* Extension */,
 				1B00946620B558DE002E7C99 /* Define */,
+				1B00945B20B558DE002E7C99 /* Extension */,
 				1B00946D20B558DE002E7C99 /* Server */,
 			);
 			path = Modal;
@@ -433,16 +449,16 @@
 		1B00945B20B558DE002E7C99 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1B00945C20B558DE002E7C99 /* UIColor+Art.m */,
-				1B00945D20B558DE002E7C99 /* NSDate+TimeInterval.m */,
-				1B00945E20B558DE002E7C99 /* NSString+Trimming.m */,
-				1B00945F20B558DE002E7C99 /* UIImage+Extension.m */,
-				1B00946020B558DE002E7C99 /* NSObject+PerformBlockAfterDelay.h */,
 				1B00946120B558DE002E7C99 /* NSDate+TimeInterval.h */,
-				1B00946220B558DE002E7C99 /* UIColor+Art.h */,
-				1B00946320B558DE002E7C99 /* UIImage+Extension.h */,
-				1B00946420B558DE002E7C99 /* NSString+Trimming.h */,
+				1B00945D20B558DE002E7C99 /* NSDate+TimeInterval.m */,
+				1B00946020B558DE002E7C99 /* NSObject+PerformBlockAfterDelay.h */,
 				1B00946520B558DE002E7C99 /* NSObject+PerformBlockAfterDelay.m */,
+				1B00946420B558DE002E7C99 /* NSString+Trimming.h */,
+				1B00945E20B558DE002E7C99 /* NSString+Trimming.m */,
+				1B00946220B558DE002E7C99 /* UIColor+Art.h */,
+				1B00945C20B558DE002E7C99 /* UIColor+Art.m */,
+				1B00946320B558DE002E7C99 /* UIImage+Extension.h */,
+				1B00945F20B558DE002E7C99 /* UIImage+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -450,12 +466,12 @@
 		1B00946620B558DE002E7C99 /* Define */ = {
 			isa = PBXGroup;
 			children = (
-				1B00946720B558DE002E7C99 /* Interfaces.h */,
-				1B00946820B558DE002E7C99 /* Utilities.h */,
-				1B00946920B558DE002E7C99 /* MyDevice.m */,
 				1B00946A20B558DE002E7C99 /* Defines.h */,
-				1B00946B20B558DE002E7C99 /* Utilities.m */,
+				1B00946720B558DE002E7C99 /* Interfaces.h */,
 				1B00946C20B558DE002E7C99 /* MyDevice.h */,
+				1B00946920B558DE002E7C99 /* MyDevice.m */,
+				1B00946820B558DE002E7C99 /* Utilities.h */,
+				1B00946B20B558DE002E7C99 /* Utilities.m */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -727,6 +743,26 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		1B00955E20B567A6002E7C99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B00956320B567B1002E7C99 /* AVFoundation.framework */,
+				1B00956120B567AB002E7C99 /* UIKit.framework */,
+				1B00955F20B567A6002E7C99 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B00956520B56D12002E7C99 /* 03.服务协议 */ = {
+			isa = PBXGroup;
+			children = (
+				1B00956620B56D43002E7C99 /* WAAgreementVC.h */,
+				1B00956720B56D43002E7C99 /* WAAgreementVC.m */,
+				1B00956820B56D43002E7C99 /* WAAgreementVC.xib */,
+			);
+			path = "03.服务协议";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -835,6 +871,7 @@
 				1B00955D20B55973002E7C99 /* Default-568h@2x.png in Resources */,
 				1B00950D20B558DE002E7C99 /* WALoginVC.xib in Resources */,
 				1B00951820B558DE002E7C99 /* Assets.xcassets in Resources */,
+				1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */,
 				1B00954720B558DE002E7C99 /* MWPhotoBrowser.bundle in Resources */,
 				1B00954D20B558DE002E7C99 /* TZImagePickerController.bundle in Resources */,
 				1B00941F20B55440002E7C99 /* Main.storyboard in Resources */,
@@ -901,6 +938,7 @@
 				1B00951420B558DE002E7C99 /* NSObject+PerformBlockAfterDelay.m in Sources */,
 				1B00951D20B558DE002E7C99 /* SelwynFormSectionItem.m in Sources */,
 				1B00953A20B558DE002E7C99 /* EMSDWebImagePrefetcher.m in Sources */,
+				1B00956920B56D43002E7C99 /* WAAgreementVC.m in Sources */,
 				1B00955620B558DE002E7C99 /* SelwynFormBaseTableViewCell.m in Sources */,
 				1B00953020B558DE002E7C99 /* PSTCollectionViewUpdateItem.m in Sources */,
 				1B00951120B558DE002E7C99 /* NSDate+TimeInterval.m in Sources */,

@@ -10,6 +10,7 @@
 
 @interface WALoginVC : UIViewController
 
+// 测试登陆
 - (void)testLogin;
 
 @end

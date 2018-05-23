@@ -10,4 +10,7 @@
 
 @interface WARegisterVC : UIViewController
 
+// 测试注册
+- (void)testRegister;
+
 @end

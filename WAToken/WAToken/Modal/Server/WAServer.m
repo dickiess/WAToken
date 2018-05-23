@@ -21,6 +21,10 @@ static WAServer *_instance = nil;
 
 @implementation WAServer
 
+
+#pragma mark - 系统管理
+
+// 单例
 + (WAServer *)sharedInstance {
     if (_instance == nil) {
         _instance = [[WAServer alloc] init];
@@ -29,6 +33,7 @@ static WAServer *_instance = nil;
     return _instance;
 }
 
+// App信息打印
 - (void)appInfo {
     NSMutableDictionary *info = [NSMutableDictionary dictionary];
     [info setObject:IOS_VERSION forKey:@"iOS_version"];
@@ -42,6 +47,7 @@ static WAServer *_instance = nil;
     NSLog(@"\n%@", info);
 }
 
+// 是否首次使用
 - (BOOL)firstLauch {
     NSUserDefaults *udf = [NSUserDefaults standardUserDefaults];
     // 判断是不是第一次启动应用
@@ -54,17 +60,17 @@ static WAServer *_instance = nil;
     return NO;
 }
 
-/****************************************************************************************/
-
 // 拨打电话
 - (void)telephoneCall:(NSString *)callNumber {
     NSString *call = [NSString stringWithFormat:@"tel:%@", callNumber];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:call]];
 }
 
-
 /****************************************************************************************/
 
+#pragma mark - 接口管理
+
+// 登陆
 - (void)loginWithName:(NSString *)name pass:(NSString *)pass callback:(Callback)cb {
     NSMutableDictionary *rlt = [NSMutableDictionary dictionary];
     if ([name isEqualToString:@"rzsoft"] &&
@@ -78,5 +84,13 @@ static WAServer *_instance = nil;
     cb(rlt);
 }
 
+// 注册
+- (void)registerWithName:(NSString *)name
+                  mobile:(NSString *)mobile
+              invitation:(NSString *)invitation
+                    pass:(NSString *)pass
+                callback:(Callback)cb {
+    
+}
 
 @end

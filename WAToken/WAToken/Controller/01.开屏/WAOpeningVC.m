@@ -44,6 +44,12 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self removeTimer];
+}
+
 - (void)initState {
     _countdownNumber = 3;
     _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
@@ -53,13 +59,19 @@
 - (void)countDown:(NSTimer *)timer {
     if (_countdownNumber > 0) {
         _countdownNumber --;
-        _countdownLabel.text = [NSString stringWithFormat:@"跳转还剩%d秒", (int)_countdownNumber];
+        int c = (int)_countdownNumber;
+        NSLog(@"跳转还剩%d秒", c);
+        _countdownLabel.text = [NSString stringWithFormat:@"跳转还剩%d秒", c];
     }
     else {
-        [_timer invalidate];
-        _timer = nil;
+        [self removeTimer];
         [self gotoLoginVC];
     }
+}
+
+- (void)removeTimer {
+    [_timer invalidate];
+    _timer = nil;
 }
 
 // 前往登陆
@@ -70,7 +82,7 @@
 
 // 点击主图
 - (IBAction)tapInImageView:(UITapGestureRecognizer *)sender {
-    //[self gotoLoginVC];
+    [self gotoLoginVC];
 }
 
 @end
