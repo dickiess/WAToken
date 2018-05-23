@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "WALoginVC.h"
+
 @interface WATokenTests : XCTestCase
 
 @end
@@ -27,6 +29,8 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    [[[WALoginVC alloc] init] testLogin];
 }
 
 - (void)testPerformanceExample {

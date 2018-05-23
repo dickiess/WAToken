@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WALoginVC">
+            <connections>
+                <outlet property="submitBtn" destination="H85-xy-kSH" id="um2-Wo-yVc"/>
+                <outlet property="textField1" destination="c8t-fD-VCD" id="gPY-kM-tWN"/>
+                <outlet property="textField2" destination="oqX-PU-PuU" id="doC-Hc-oGU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-ej-yLc" userLabel="MainView">
+                    <rect key="frame" x="38" y="59" width="300" height="550"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_title" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-Nc-c7a">
+                            <rect key="frame" x="60" y="33" width="180" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="87f-KB-zfW"/>
+                                <constraint firstAttribute="width" constant="180" id="8o9-ma-gUZ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_user" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-mF-lXU">
+                            <rect key="frame" x="16" y="258" width="28" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOg-Yn-REY" userLabel="Line">
+                            <rect key="frame" x="52" y="290" width="220" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_lock" translatesAutoresizingMaskIntoConstraints="NO" id="V2I-e2-oFL">
+                            <rect key="frame" x="16" y="319" width="28" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtP-sK-luV" userLabel="Line">
+                            <rect key="frame" x="52" y="351" width="220" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H85-xy-kSH">
+                            <rect key="frame" x="25" y="432" width="250" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="登    入">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="submit:" destination="-1" eventType="touchUpInside" id="LjN-co-pKY"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-fD-VCD">
+                            <rect key="frame" x="60" y="258" width="180" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="uqW-of-lZo"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的登陆密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oqX-PU-PuU">
+                            <rect key="frame" x="60" y="319" width="180" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="xgF-6R-eMi"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="9PT-Nc-c7a" firstAttribute="top" secondItem="rqT-ej-yLc" secondAttribute="top" constant="33" id="0g3-Vu-16S"/>
+                        <constraint firstItem="9PT-Nc-c7a" firstAttribute="centerX" secondItem="rqT-ej-yLc" secondAttribute="centerX" id="Bvc-e6-WhI"/>
+                        <constraint firstAttribute="height" constant="550" id="HsV-DK-m3K"/>
+                        <constraint firstAttribute="width" constant="300" id="Mgv-S0-Hvp"/>
+                        <constraint firstItem="9PT-Nc-c7a" firstAttribute="centerX" secondItem="rqT-ej-yLc" secondAttribute="centerX" id="nxm-Ih-q7D"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="y3d-jk-TeZ" appends="YES" id="NPA-aV-DOs"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJK-6l-E9q">
+                    <rect key="frame" x="16" y="617" width="62" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FIz-iI-oL0"/>
+                        <constraint firstAttribute="width" constant="62" id="o6Q-5K-zY2"/>
+                    </constraints>
+                    <state key="normal" title="联系客服">
+                        <color key="titleColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="contactForHelp:" destination="-1" eventType="touchUpInside" id="J28-oG-nqW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqo-q5-vth">
+                    <rect key="frame" x="282" y="617" width="77" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4nF-SX-Xly"/>
+                        <constraint firstAttribute="width" constant="77" id="fvK-lK-kKG"/>
+                    </constraints>
+                    <state key="normal" title="新用户注册">
+                        <color key="titleColor" red="0.031372549019607843" green="0.29803921568627451" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="gotoRegisterVC:" destination="-1" eventType="touchUpInside" id="ayh-MN-ftB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rqT-ej-yLc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JbG-S2-IfP"/>
+                <constraint firstAttribute="trailing" secondItem="Iqo-q5-vth" secondAttribute="trailing" constant="16" id="LTc-xR-G7J"/>
+                <constraint firstAttribute="bottom" secondItem="Iqo-q5-vth" secondAttribute="bottom" constant="20" id="SF8-2d-JjF"/>
+                <constraint firstItem="VJK-6l-E9q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="mhR-LZ-g34"/>
+                <constraint firstAttribute="bottom" secondItem="VJK-6l-E9q" secondAttribute="bottom" constant="20" id="tCv-mI-pck"/>
+                <constraint firstItem="rqT-ej-yLc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tFI-Jv-rPS"/>
+            </constraints>
+            <point key="canvasLocation" x="49.5" y="53.5"/>
+        </view>
+        <tapGestureRecognizer id="y3d-jk-TeZ">
+            <connections>
+                <action selector="tapInScreen:" destination="-1" id="udz-Dk-yMm"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ico_lock" width="14" height="16"/>
+        <image name="ico_user" width="14" height="16"/>
+        <image name="logo_title" width="512" height="452"/>
+    </resources>
+</document>
