@@ -28,7 +28,7 @@
     if (_openingVC == nil) {
         _openingVC = [[WAOpeningVC alloc] init];
     }
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_openingVC];
+    RichNavigationController *nav = [[RichNavigationController alloc] initWithRootViewController:_openingVC];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
     

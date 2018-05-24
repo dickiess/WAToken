@@ -90,7 +90,15 @@ static WAServer *_instance = nil;
               invitation:(NSString *)invitation
                     pass:(NSString *)pass
                 callback:(Callback)cb {
-    
+    NSMutableDictionary *rlt = [NSMutableDictionary dictionary];
+    if ([invitation isEqualToString:@"rzsoft"]) {
+        [rlt setObject:[NSNumber numberWithBool:YES] forKey:@"result"];
+    }
+    else {
+        [rlt setObject:[NSNumber numberWithBool:NO] forKey:@"result"];
+        [rlt setObject:@"邀请码不正确" forKey:@"message"];
+    }
+    cb(rlt);
 }
 
 @end

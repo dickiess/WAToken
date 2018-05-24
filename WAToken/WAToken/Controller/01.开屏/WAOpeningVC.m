@@ -35,13 +35,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    NSLog(@"=== WAOpeningVC ===");
+
     if ([WA_API firstLauch]) {
         _countdownLabel.hidden = YES;
     } else {
         _countdownLabel.hidden = NO;
     }
+    
+    NSLog(@"=== WAOpeningVC ===");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -82,7 +83,16 @@
 
 // 点击主图
 - (IBAction)tapInImageView:(UITapGestureRecognizer *)sender {
-    [self gotoLoginVC];
+    //[self gotoLoginVC];
+}
+
+/*****************************************************************************************************/
+
+#pragma mark - status bar style
+
+// 状态栏白字
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end

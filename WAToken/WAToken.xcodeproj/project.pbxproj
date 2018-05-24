@@ -99,6 +99,8 @@
 		1B00956420B567B1002E7C99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B00956320B567B1002E7C99 /* AVFoundation.framework */; };
 		1B00956920B56D43002E7C99 /* WAAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00956720B56D43002E7C99 /* WAAgreementVC.m */; };
 		1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B00956820B56D43002E7C99 /* WAAgreementVC.xib */; };
+		1B63D12820B6645700487C43 /* RichNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63D12720B6645700487C43 /* RichNavigationController.m */; };
+		1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B63D12920B66A5300487C43 /* protocol_cn.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +305,9 @@
 		1B00956620B56D43002E7C99 /* WAAgreementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAAgreementVC.h; sourceTree = "<group>"; };
 		1B00956720B56D43002E7C99 /* WAAgreementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAAgreementVC.m; sourceTree = "<group>"; };
 		1B00956820B56D43002E7C99 /* WAAgreementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAAgreementVC.xib; sourceTree = "<group>"; };
+		1B63D12620B6645700487C43 /* RichNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RichNavigationController.h; sourceTree = "<group>"; };
+		1B63D12720B6645700487C43 /* RichNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichNavigationController.m; sourceTree = "<group>"; };
+		1B63D12920B66A5300487C43 /* protocol_cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = protocol_cn.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +394,7 @@
 		1B00944920B558DD002E7C99 /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				1B63D12920B66A5300487C43 /* protocol_cn.html */,
 				1B00944A20B558DD002E7C99 /* WAAppInfo.h */,
 			);
 			path = Document;
@@ -439,6 +445,7 @@
 		1B00945A20B558DE002E7C99 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				1B63D12520B6641900487C43 /* Base */,
 				1B00946620B558DE002E7C99 /* Define */,
 				1B00945B20B558DE002E7C99 /* Extension */,
 				1B00946D20B558DE002E7C99 /* Server */,
@@ -763,6 +770,15 @@
 			path = "03.服务协议";
 			sourceTree = "<group>";
 		};
+		1B63D12520B6641900487C43 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1B63D12620B6645700487C43 /* RichNavigationController.h */,
+				1B63D12720B6645700487C43 /* RichNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -874,6 +890,7 @@
 				1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */,
 				1B00954720B558DE002E7C99 /* MWPhotoBrowser.bundle in Resources */,
 				1B00954D20B558DE002E7C99 /* TZImagePickerController.bundle in Resources */,
+				1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */,
 				1B00941F20B55440002E7C99 /* Main.storyboard in Resources */,
 				1B00950A20B558DE002E7C99 /* WARegisterVC.xib in Resources */,
 			);
@@ -907,6 +924,7 @@
 				1B00954520B558DE002E7C99 /* UIImage+EMMultiFormat.m in Sources */,
 				1B00953420B558DE002E7C99 /* PSTGridLayoutRow.m in Sources */,
 				1B00955820B558DE002E7C99 /* MBProgressHUD.m in Sources */,
+				1B63D12820B6645700487C43 /* RichNavigationController.m in Sources */,
 				1B00953B20B558DE002E7C99 /* MKAnnotationView+EMWebCache.m in Sources */,
 				1B00952420B558DE002E7C99 /* MWTapDetectingImageView.m in Sources */,
 				1B00953520B558DE002E7C99 /* PSTCollectionViewLayout.m in Sources */,

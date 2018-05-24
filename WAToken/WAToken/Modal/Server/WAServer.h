@@ -22,6 +22,8 @@
 #import "UIColor+Art.h"
 #import "UIImage+Extension.h"
 
+#import "RichNavigationController.h"
+
 
 
 /****************************************************************************************/
@@ -46,6 +48,8 @@ typedef void (^Callback)(id obj);
 #pragma mark - 系统管理
 
 @interface WAServer : NSObject
+
+@property (nonatomic, assign) BOOL isAgreementRead;
 
 // 单例
 + (WAServer *)sharedInstance;

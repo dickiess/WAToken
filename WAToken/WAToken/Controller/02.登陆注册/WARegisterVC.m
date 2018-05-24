@@ -41,16 +41,41 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self updateCheckBox];
+    
     NSLog(@"=== WARegisterVC ===");
 }
 
 - (void)initUI {
     // textfield
     
+    // isAgreementRead
+    WA_API.isAgreementRead = NO;
+    
     // submit button
     _submitBtn.layer.cornerRadius = 5.0f;
     _submitBtn.layer.masksToBounds = YES;
 }
+
+// 更新勾选框视图
+- (void)updateCheckBox {
+    if (WA_API.isAgreementRead) {
+        _submitBtn.enabled = YES;
+        [_checkBtn setImage:[UIImage imageNamed:@"btn_hook_on"] forState:UIControlStateNormal];
+        _submitBtn.backgroundColor = HexRGB(THEME_BLUE);
+    } else {
+        _submitBtn.enabled = NO;
+        [_checkBtn setImage:[UIImage imageNamed:@"btn_hook_off"] forState:UIControlStateNormal];
+        _submitBtn.backgroundColor = HexRGB(THEME_GRAY);
+    }
+}
+
+
+/*****************************************************************************************************/
+
+#pragma mark - delegate
+
+
 
 /*****************************************************************************************************/
 
@@ -83,7 +108,64 @@
 
 // 点击勾选框
 - (IBAction)tapInCheckBox:(UIButton *)sender {
+    WA_API.isAgreementRead = !WA_API.isAgreementRead;
+    [self updateCheckBox];
+}
 
+    // 输入控制
+- (BOOL)textFieldCheck {
+    if (_textField1.text.length >= 2 && _textField1.text.length <= 6) {
+        [self warningMessage:@"请输入真实姓名"];
+        return NO;
+    }
+    
+    if ([Utilities isValidateMobileNumber:_textField2.text]) {
+        [self warningMessage:@"请输入正确的手机号码"];
+        return NO;
+    }
+    
+    if ((_textField3.text.length == 6) == NO) {
+        [self warningMessage:@"请输入正确的邀请码"];
+        return NO;
+    }
+    
+    if ((_textField4.text.length == 6) == NO) {
+        [self warningMessage:@"请输入正确的登陆密码"];
+        return NO;
+    }
+    
+    if ([_textField4.text isEqualToString:_textField5.text] == NO) {
+        [self warningMessage:@"确认密码不一致"];
+        return NO;
+    }
+    
+    return YES;
+}
+
+// 注册
+- (IBAction)submit:(UIButton *)sender {
+    // 输入控制
+    if (! [self textFieldCheck]) {
+        return;
+    }
+    
+    // 注册
+    __weak WARegisterVC *wSelf = self;
+    [WA_API registerWithName:_textField1.text
+                      mobile:_textField2.text
+                  invitation:_textField3.text
+                        pass:_textField4.text callback:^(id obj) {
+                            NSDictionary *info = (NSDictionary *)obj;
+                            if ([info[@"result"] boolValue]) {
+                                [self.navigationController popToRootViewControllerAnimated:YES];
+                            } else {
+                                [wSelf warningMessage:info[@"message"]];
+                            }
+                        }];
+    
+    
+    
+    
 }
 
 /*****************************************************************************************************/
@@ -113,6 +195,15 @@
           _textField3.text,
           _textField4.text,
           _textField5.text);
+}
+
+/*****************************************************************************************************/
+
+#pragma mark - status bar style
+
+// 状态栏黑字
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 @end

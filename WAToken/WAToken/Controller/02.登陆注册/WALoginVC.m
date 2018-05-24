@@ -55,8 +55,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSInteger tag = textField.tag;
     if (tag == 11) {
-        [_textField1 resignFirstResponder];
-        [_textField2 becomeFirstResponder];
+        [self keyboardDismiss];
     }
     else if (tag == 12) {
         [self keyboardDismiss];
@@ -142,6 +141,15 @@
 // 测试登陆
 - (void)testLogin {
     NSLog(@"用户: %@, 密码: %@", _textField1.text, _textField2.text);
+}
+
+/*****************************************************************************************************/
+
+#pragma mark - status bar style
+
+// 状态栏黑字
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 @end
