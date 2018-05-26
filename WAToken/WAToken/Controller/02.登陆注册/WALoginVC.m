@@ -54,11 +54,12 @@
 // 键盘返回按钮
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSInteger tag = textField.tag;
+    [self keyboardDismiss];
+    
     if (tag == 11) {
-        [self keyboardDismiss];
+        
     }
     else if (tag == 12) {
-        [self keyboardDismiss];
     }
     
     return YES;

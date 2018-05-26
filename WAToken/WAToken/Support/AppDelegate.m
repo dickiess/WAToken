@@ -67,7 +67,7 @@
 
 /*******************************************************************************************************/
 
-+ (AppDelegate *)shareAppdelegate {
++ (AppDelegate *)shareAppDelegate {
     return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 

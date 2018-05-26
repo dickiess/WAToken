@@ -75,7 +75,26 @@
 
 #pragma mark - delegate
 
-
+// 键盘返回按钮
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSInteger tag = textField.tag;
+    [self keyboardDismiss];
+    
+    if (tag == 11) {
+        [_textField2 becomeFirstResponder];
+    }
+    else if (tag == 12) {
+        [_textField3 becomeFirstResponder];
+    }
+    else if (tag == 13) {
+        [_textField4 becomeFirstResponder];
+    }
+    else if (tag == 14) {
+        [_textField5 becomeFirstResponder];
+    }
+    
+    return YES;
+}
 
 /*****************************************************************************************************/
 
@@ -114,7 +133,7 @@
 
     // 输入控制
 - (BOOL)textFieldCheck {
-    if (_textField1.text.length >= 2 && _textField1.text.length <= 6) {
+    if (_textField1.text.length < 2 || _textField1.text.length > 8) {
         [self warningMessage:@"请输入真实姓名"];
         return NO;
     }
@@ -145,7 +164,7 @@
 // 注册
 - (IBAction)submit:(UIButton *)sender {
     // 输入控制
-    if (! [self textFieldCheck]) {
+    if ([self textFieldCheck] == NO) {
         return;
     }
     

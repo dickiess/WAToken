@@ -16,6 +16,7 @@
 /****************************************************************************************/
 
 static WAServer *_instance = nil;
+static UIAlertView *_warnningMsg = nil;
 
 /****************************************************************************************/
 
@@ -31,6 +32,17 @@ static WAServer *_instance = nil;
     }
     
     return _instance;
+}
+
+// 系统警告
+- (void)systemWarnning:(NSString *)msg {
+    _warnningMsg = [[UIAlertView alloc] initWithTitle:@"提示:"
+                                              message:msg
+                                             delegate:nil
+                                    cancelButtonTitle:@"确认"
+                                    otherButtonTitles:nil, nil];
+    
+    [_warnningMsg show];
 }
 
 // App信息打印

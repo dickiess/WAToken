@@ -8,8 +8,11 @@
 
 #import "WAOpeningVC.h"
 #import "WALoginVC.h"
+#import "WATabBarController.h"
 
 #import "WAServer.h"
+
+#import "RichKeyChain.h"
 
 @interface WAOpeningVC ()
 
@@ -36,13 +39,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    if ([WA_API firstLauch]) {
-        _countdownLabel.hidden = YES;
-    } else {
-        _countdownLabel.hidden = NO;
-    }
-    
     NSLog(@"=== WAOpeningVC ===");
+    
+    // 如果没有登陆用户，前往登陆页面
+    if ([RichKeyChain keyChainReadKey:@"WATokenUser"] == nil) {
+        _countdownLabel.hidden = YES;
+        [NSObject performAfterDelay:0.5f withBlock:^{
+//            [self gotoLoginVC];
+            [self gotoMainVC];
+        }];
+    }
+    // 登录用户3秒钟广告时间
+    else {
+        _countdownLabel.hidden = NO;
+        _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -53,12 +64,11 @@
 
 - (void)initState {
     _countdownNumber = 3;
-    _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
 }
 
 // 计数
 - (void)countDown:(NSTimer *)timer {
-    if (_countdownNumber > 0) {
+    if (_countdownNumber > 1) {
         _countdownNumber --;
         int c = (int)_countdownNumber;
         NSLog(@"跳转还剩%d秒", c);
@@ -66,7 +76,7 @@
     }
     else {
         [self removeTimer];
-        [self gotoLoginVC];
+        [self gotoMainVC];
     }
 }
 
@@ -79,6 +89,12 @@
 - (void)gotoLoginVC {
     WALoginVC *loginVC = [[WALoginVC alloc] init];
     [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+// 前往主页面
+- (void)gotoMainVC {
+    WATabBarController *tab = [[WATabBarController alloc] init];
+    [self.navigationController pushViewController:tab animated:NO];
 }
 
 // 点击主图

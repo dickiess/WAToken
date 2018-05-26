@@ -24,7 +24,7 @@
 
 #import "RichNavigationController.h"
 
-
+#import "DzhProcessHUD.h"
 
 /****************************************************************************************/
 
@@ -53,6 +53,9 @@ typedef void (^Callback)(id obj);
 
 // 单例
 + (WAServer *)sharedInstance;
+
+// 系统警告
+- (void)systemWarnning:(NSString *)msg;
 
 // App信息打印
 - (void)appInfo;
