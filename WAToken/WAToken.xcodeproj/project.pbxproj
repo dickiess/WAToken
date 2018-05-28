@@ -332,6 +332,18 @@
 		1BB1400120B7F0050046132B /* SelwynFormBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13FBE20B7F0040046132B /* SelwynFormBaseViewController.m */; };
 		1BB1400220B7F0050046132B /* RichKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13FC220B7F0050046132B /* RichKeyChain.m */; };
 		1BB1400620B8096E0046132B /* WATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1400520B8096E0046132B /* WATabBarController.m */; };
+		1BD32A9C20BB8B31005606D4 /* WATabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32A9B20BB8B31005606D4 /* WATabBar.m */; };
+		1BD32AAB20BBCE19005606D4 /* WAMainPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AA920BBCE19005606D4 /* WAMainPageVC.m */; };
+		1BD32AAC20BBCE19005606D4 /* WAMainPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32AAA20BBCE19005606D4 /* WAMainPageVC.xib */; };
+		1BD32AB520BBDAC4005606D4 /* WAQRCodeScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AB320BBDAC4005606D4 /* WAQRCodeScanVC.m */; };
+		1BD32AB620BBDAC4005606D4 /* WAQRCodeScanVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32AB420BBDAC4005606D4 /* WAQRCodeScanVC.xib */; };
+		1BD32AC720BBE1BA005606D4 /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32AB920BBE1BA005606D4 /* SGQRCode.bundle */; };
+		1BD32AC820BBE1BA005606D4 /* UIImage+SGImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32ABB20BBE1BA005606D4 /* UIImage+SGImageSize.m */; };
+		1BD32AC920BBE1BA005606D4 /* SGQRCodeHelperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32ABD20BBE1BA005606D4 /* SGQRCodeHelperTool.m */; };
+		1BD32ACA20BBE1BA005606D4 /* SGQRCodeScanningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32ABE20BBE1BA005606D4 /* SGQRCodeScanningView.m */; };
+		1BD32ACB20BBE1BA005606D4 /* SGQRCodeScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32ABF20BBE1BA005606D4 /* SGQRCodeScanManager.m */; };
+		1BD32ACC20BBE1BA005606D4 /* SGQRCodeGenerateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AC020BBE1BA005606D4 /* SGQRCodeGenerateManager.m */; };
+		1BD32ACD20BBE1BA005606D4 /* SGQRCodeAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AC520BBE1BA005606D4 /* SGQRCodeAlbumManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1068,6 +1080,28 @@
 		1BB13FC220B7F0050046132B /* RichKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichKeyChain.m; sourceTree = "<group>"; };
 		1BB1400420B8096E0046132B /* WATabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATabBarController.h; sourceTree = "<group>"; };
 		1BB1400520B8096E0046132B /* WATabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATabBarController.m; sourceTree = "<group>"; };
+		1BD32A9A20BB8B31005606D4 /* WATabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATabBar.h; sourceTree = "<group>"; };
+		1BD32A9B20BB8B31005606D4 /* WATabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATabBar.m; sourceTree = "<group>"; };
+		1BD32AA820BBCE19005606D4 /* WAMainPageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAMainPageVC.h; sourceTree = "<group>"; };
+		1BD32AA920BBCE19005606D4 /* WAMainPageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAMainPageVC.m; sourceTree = "<group>"; };
+		1BD32AAA20BBCE19005606D4 /* WAMainPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAMainPageVC.xib; sourceTree = "<group>"; };
+		1BD32AB220BBDAC4005606D4 /* WAQRCodeScanVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAQRCodeScanVC.h; sourceTree = "<group>"; };
+		1BD32AB320BBDAC4005606D4 /* WAQRCodeScanVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAQRCodeScanVC.m; sourceTree = "<group>"; };
+		1BD32AB420BBDAC4005606D4 /* WAQRCodeScanVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAQRCodeScanVC.xib; sourceTree = "<group>"; };
+		1BD32AB820BBE1BA005606D4 /* SGQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCode.h; sourceTree = "<group>"; };
+		1BD32AB920BBE1BA005606D4 /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SGQRCode.bundle; sourceTree = "<group>"; };
+		1BD32ABB20BBE1BA005606D4 /* UIImage+SGImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SGImageSize.m"; sourceTree = "<group>"; };
+		1BD32ABC20BBE1BA005606D4 /* UIImage+SGImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SGImageSize.h"; sourceTree = "<group>"; };
+		1BD32ABD20BBE1BA005606D4 /* SGQRCodeHelperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeHelperTool.m; sourceTree = "<group>"; };
+		1BD32ABE20BBE1BA005606D4 /* SGQRCodeScanningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanningView.m; sourceTree = "<group>"; };
+		1BD32ABF20BBE1BA005606D4 /* SGQRCodeScanManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanManager.m; sourceTree = "<group>"; };
+		1BD32AC020BBE1BA005606D4 /* SGQRCodeGenerateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeGenerateManager.m; sourceTree = "<group>"; };
+		1BD32AC120BBE1BA005606D4 /* SGQRCodeAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeAlbumManager.h; sourceTree = "<group>"; };
+		1BD32AC220BBE1BA005606D4 /* SGQRCodeHelperTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeHelperTool.h; sourceTree = "<group>"; };
+		1BD32AC320BBE1BA005606D4 /* SGQRCodeScanningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanningView.h; sourceTree = "<group>"; };
+		1BD32AC420BBE1BA005606D4 /* SGQRCodeScanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanManager.h; sourceTree = "<group>"; };
+		1BD32AC520BBE1BA005606D4 /* SGQRCodeAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeAlbumManager.m; sourceTree = "<group>"; };
+		1BD32AC620BBE1BA005606D4 /* SGQRCodeGenerateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeGenerateManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1172,6 +1206,13 @@
 				1B00944C20B558DD002E7C99 /* 02.登陆注册 */,
 				1B00956520B56D12002E7C99 /* 03.服务协议 */,
 				1BB1400320B8091A0046132B /* 04.菜单栏 */,
+				1BD32A9D20BB9C6B005606D4 /* 05.主页 */,
+				1BD32A9E20BB9C6B005606D4 /* 06.传输 */,
+				1BD32A9F20BB9C6B005606D4 /* 07.添加 */,
+				1BD32AA020BB9C6C005606D4 /* 08.用户 */,
+				1BD32AA120BB9C6C005606D4 /* 09.更多 */,
+				1BD32AA220BB9C6C005606D4 /* 10.设置 */,
+				1BD32AAD20BBD445005606D4 /* 11.扫码 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1811,6 +1852,7 @@
 				1BB13DBD20B7DA630046132B /* RichAlert */,
 				1BB13E8A20B7DA630046132B /* SDWebImage */,
 				1BB13F3120B7F0040046132B /* SelwynForm */,
+				1BD32AB720BBE1BA005606D4 /* SGQRCode */,
 				1BB13DC020B7DA630046132B /* SGWiFiUpload */,
 				1BB13E3420B7DA630046132B /* UIKit+AFNetworking */,
 			);
@@ -2538,10 +2580,96 @@
 		1BB1400320B8091A0046132B /* 04.菜单栏 */ = {
 			isa = PBXGroup;
 			children = (
+				1BD32A9A20BB8B31005606D4 /* WATabBar.h */,
+				1BD32A9B20BB8B31005606D4 /* WATabBar.m */,
 				1BB1400420B8096E0046132B /* WATabBarController.h */,
 				1BB1400520B8096E0046132B /* WATabBarController.m */,
 			);
 			path = "04.菜单栏";
+			sourceTree = "<group>";
+		};
+		1BD32A9D20BB9C6B005606D4 /* 05.主页 */ = {
+			isa = PBXGroup;
+			children = (
+				1BD32AA820BBCE19005606D4 /* WAMainPageVC.h */,
+				1BD32AA920BBCE19005606D4 /* WAMainPageVC.m */,
+				1BD32AAA20BBCE19005606D4 /* WAMainPageVC.xib */,
+			);
+			path = "05.主页";
+			sourceTree = "<group>";
+		};
+		1BD32A9E20BB9C6B005606D4 /* 06.传输 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "06.传输";
+			sourceTree = "<group>";
+		};
+		1BD32A9F20BB9C6B005606D4 /* 07.添加 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "07.添加";
+			sourceTree = "<group>";
+		};
+		1BD32AA020BB9C6C005606D4 /* 08.用户 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "08.用户";
+			sourceTree = "<group>";
+		};
+		1BD32AA120BB9C6C005606D4 /* 09.更多 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "09.更多";
+			sourceTree = "<group>";
+		};
+		1BD32AA220BB9C6C005606D4 /* 10.设置 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "10.设置";
+			sourceTree = "<group>";
+		};
+		1BD32AAD20BBD445005606D4 /* 11.扫码 */ = {
+			isa = PBXGroup;
+			children = (
+				1BD32AB220BBDAC4005606D4 /* WAQRCodeScanVC.h */,
+				1BD32AB320BBDAC4005606D4 /* WAQRCodeScanVC.m */,
+				1BD32AB420BBDAC4005606D4 /* WAQRCodeScanVC.xib */,
+			);
+			path = "11.扫码";
+			sourceTree = "<group>";
+		};
+		1BD32AB720BBE1BA005606D4 /* SGQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				1BD32ABA20BBE1BA005606D4 /* Category */,
+				1BD32AB920BBE1BA005606D4 /* SGQRCode.bundle */,
+				1BD32AB820BBE1BA005606D4 /* SGQRCode.h */,
+				1BD32AC120BBE1BA005606D4 /* SGQRCodeAlbumManager.h */,
+				1BD32AC520BBE1BA005606D4 /* SGQRCodeAlbumManager.m */,
+				1BD32AC620BBE1BA005606D4 /* SGQRCodeGenerateManager.h */,
+				1BD32AC020BBE1BA005606D4 /* SGQRCodeGenerateManager.m */,
+				1BD32AC220BBE1BA005606D4 /* SGQRCodeHelperTool.h */,
+				1BD32ABD20BBE1BA005606D4 /* SGQRCodeHelperTool.m */,
+				1BD32AC420BBE1BA005606D4 /* SGQRCodeScanManager.h */,
+				1BD32ABF20BBE1BA005606D4 /* SGQRCodeScanManager.m */,
+				1BD32AC320BBE1BA005606D4 /* SGQRCodeScanningView.h */,
+				1BD32ABE20BBE1BA005606D4 /* SGQRCodeScanningView.m */,
+			);
+			path = SGQRCode;
+			sourceTree = "<group>";
+		};
+		1BD32ABA20BBE1BA005606D4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1BD32ABC20BBE1BA005606D4 /* UIImage+SGImageSize.h */,
+				1BD32ABB20BBE1BA005606D4 /* UIImage+SGImageSize.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2654,6 +2782,7 @@
 				1BB13EC420B7DA640046132B /* SGWiFiUpload.bundle in Resources */,
 				1B00955D20B55973002E7C99 /* Default-568h@2x.png in Resources */,
 				1BB13EBE20B7DA640046132B /* index.html in Resources */,
+				1BD32AC720BBE1BA005606D4 /* SGQRCode.bundle in Resources */,
 				1BB13EDC20B7DA640046132B /* README.txt in Resources */,
 				1B00950D20B558DE002E7C99 /* WALoginVC.xib in Resources */,
 				1BB13F0020B7DA640046132B /* HJVideoAssets.xcassets in Resources */,
@@ -2661,7 +2790,9 @@
 				1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */,
 				1BB13EDF20B7DA640046132B /* About.md in Resources */,
 				1BB13FF320B7F0050046132B /* TZImagePickerController.bundle in Resources */,
+				1BD32AB620BBDAC4005606D4 /* WAQRCodeScanVC.xib in Resources */,
 				1BB13D4520B7BF500046132B /* README.md in Resources */,
+				1BD32AAC20BBCE19005606D4 /* WAMainPageVC.xib in Resources */,
 				1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */,
 				1BB13FED20B7F0050046132B /* MWPhotoBrowser.bundle in Resources */,
 				1B00941F20B55440002E7C99 /* Main.storyboard in Resources */,
@@ -2693,6 +2824,7 @@
 				1BB13FC420B7F0050046132B /* SelwynFormItem.m in Sources */,
 				1BB13EFB20B7DA640046132B /* AFURLSessionManager.m in Sources */,
 				1BB13FD420B7F0050046132B /* PSTCollectionViewData.m in Sources */,
+				1BD32ACD20BBE1BA005606D4 /* SGQRCodeAlbumManager.m in Sources */,
 				1BB13D5720B7BF500046132B /* BcjRegister.cpp in Sources */,
 				1BB13D5420B7BF500046132B /* 7zAes.cpp in Sources */,
 				1BB13EF820B7DA640046132B /* RichProgressButton.m in Sources */,
@@ -2707,6 +2839,7 @@
 				1BB13FEB20B7F0050046132B /* UIImage+EMMultiFormat.m in Sources */,
 				1BB13D8F20B7BF500046132B /* Lzma2Enc.c in Sources */,
 				1BB13DA220B7BF500046132B /* LzmaSDKObjCWriter.mm in Sources */,
+				1BD32A9C20BB8B31005606D4 /* WATabBar.m in Sources */,
 				1BB13D4F20B7BF500046132B /* MyWindows.cpp in Sources */,
 				1BB13D9A20B7BF500046132B /* Threads.c in Sources */,
 				1BB13FEA20B7F0050046132B /* EMSDWebImageCompat.m in Sources */,
@@ -2761,6 +2894,7 @@
 				1BB13FDB20B7F0050046132B /* PSTCollectionViewLayout.m in Sources */,
 				1BB13FE520B7F0050046132B /* UIImageView+EMWebCache.m in Sources */,
 				1BB13F1620B7DA640046132B /* SDWebImageManager.m in Sources */,
+				1BD32ACB20BBE1BA005606D4 /* SGQRCodeScanManager.m in Sources */,
 				1BB13FFB20B7F0050046132B /* SelwynFormSelectTableViewCell.m in Sources */,
 				1BB13F2020B7DA640046132B /* SDWebImagePrefetcher.m in Sources */,
 				1BB13EE420B7DA640046132B /* DzhProcessHUD.m in Sources */,
@@ -2790,10 +2924,12 @@
 				1BB13FF620B7F0050046132B /* TZPhotoPreviewCell.m in Sources */,
 				1BB13D5C20B7BF500046132B /* BcjCoder.cpp in Sources */,
 				1B00951720B558DE002E7C99 /* WAServer.m in Sources */,
+				1BD32ACC20BBE1BA005606D4 /* SGQRCodeGenerateManager.m in Sources */,
 				1BB13D9220B7BF500046132B /* 7zStream.c in Sources */,
 				1BB13FC320B7F0050046132B /* SelwynFormSectionItem.m in Sources */,
 				1BB13D3720B7BF500046132B /* RichItem.m in Sources */,
 				1BB13D5F20B7BF500046132B /* ArchiveExports.cpp in Sources */,
+				1BD32AC920BBE1BA005606D4 /* SGQRCodeHelperTool.m in Sources */,
 				1BB13FD320B7F0050046132B /* PSTGridLayoutInfo.m in Sources */,
 				1BB13ECC20B7DA640046132B /* HTTPRedirectResponse.m in Sources */,
 				1BB13D9D20B7BF500046132B /* LzmaSDKObjCUpdateCallback.mm in Sources */,
@@ -2813,6 +2949,7 @@
 				1BB13DA520B7BF500046132B /* LzmaSDKObjCInFile.cpp in Sources */,
 				1BB13FD120B7F0050046132B /* PSTCollectionViewFlowLayout.m in Sources */,
 				1BB13D8D20B7BF500046132B /* Alloc.c in Sources */,
+				1BD32AAB20BBCE19005606D4 /* WAMainPageVC.m in Sources */,
 				1BB13EDD20B7DA640046132B /* DDLog.m in Sources */,
 				1BB13D9420B7BF500046132B /* Delta.c in Sources */,
 				1BB13EBA20B7DA640046132B /* PanBackViewController.m in Sources */,
@@ -2843,6 +2980,7 @@
 				1BB13D7C20B7BF500046132B /* LimitedStreams.cpp in Sources */,
 				1BB13EF020B7DA640046132B /* UIRefreshControl+AFNetworking.m in Sources */,
 				1BB13F1420B7DA640046132B /* UIImage+WebP.m in Sources */,
+				1BD32AB520BBDAC4005606D4 /* WAQRCodeScanVC.m in Sources */,
 				1BB13D7D20B7BF500046132B /* InOutTempBuffer.cpp in Sources */,
 				1BB13D5620B7BF500046132B /* Lzma2Decoder.cpp in Sources */,
 				1BB13F1B20B7DA640046132B /* FLAnimatedImageView.m in Sources */,
@@ -2939,6 +3077,7 @@
 				1BB13D8620B7BF500046132B /* LzmaEnc.c in Sources */,
 				1BB13FCA20B7F0050046132B /* MWTapDetectingImageView.m in Sources */,
 				1BB13EBC20B7DA640046132B /* BackNavigationController.m in Sources */,
+				1BD32ACA20BBE1BA005606D4 /* SGQRCodeScanningView.m in Sources */,
 				1BB13D6220B7BF500046132B /* HandlerOut.cpp in Sources */,
 				1BB13F1A20B7DA640046132B /* FLAnimatedImage.m in Sources */,
 				1BB13D6920B7BF500046132B /* 7zHandler.cpp in Sources */,
@@ -2969,6 +3108,7 @@
 				1BB13F0520B7DA640046132B /* HJVideoPlayerUtil.m in Sources */,
 				1BB13FD520B7F0050046132B /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				1BB13D7720B7BF500046132B /* FilterCoder.cpp in Sources */,
+				1BD32AC820BBE1BA005606D4 /* UIImage+SGImageSize.m in Sources */,
 				1BB13DA720B7BF500046132B /* LzmaSDKObjCBaseCoder.cpp in Sources */,
 				1BB13D9620B7BF500046132B /* AesOpt.c in Sources */,
 				1BB13ED820B7DA640046132B /* DDTTYLogger.m in Sources */,
