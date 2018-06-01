@@ -13,6 +13,7 @@
 #define APP_ID      @""
 #define HOT_LINE    @"02152400060"   // 热线电话
 
+#define THEME_GREEN     0x79C9C9
 #define THEME_LIGHTBLUE 0x0077F8
 #define THEME_BLUE      0x004A97
 #define THEME_CYAN      0x79C9C9

@@ -9,14 +9,16 @@
 #import "WAQRCodeScanVC.h"
 #import "SGQRCode.h"
 
+#import "WAWebUrlVC.h"
+
 #import "WAServer.h"
+
 
 @interface WAQRCodeScanVC () <SGQRCodeScanManagerDelegate, SGQRCodeAlbumManagerDelegate>
 
 @property (nonatomic, strong) SGQRCodeScanManager *manager;
 @property (nonatomic, strong) SGQRCodeScanningView *scanningView;
 @property (nonatomic, strong) UILabel *promptLabel;
-@property (nonatomic, copy)   NSString  *scanResult;
 
 @end
 
@@ -42,7 +44,13 @@
     
     UIImagePickerControllerSourceType sourType = UIImagePickerControllerSourceTypeCamera;
     if ([UIImagePickerController isSourceTypeAvailable:sourType] == NO) {
-        [self warningMessage:@"该设备不支持摄像头"];
+        UIAlertAction *action
+        = [UIAlertAction actionWithTitle:@"关闭"
+                                   style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction *action) {
+                                     [self.navigationController popViewControllerAnimated:NO];
+                                 }];
+        [self warningMessage:@"该设备不支持摄像头" action:action];
     } else {
         [self setupQRCodeScanning];
     }
@@ -157,7 +165,13 @@
 
 - (void)QRCodeAlbumManagerDidReadQRCodeFailure:(SGQRCodeAlbumManager *)albumManager {
     NSLog(@"暂未识别出二维码");
-    [self warningMessage:@"暂未识别出二维码"];
+    UIAlertAction *action
+    = [UIAlertAction actionWithTitle:@"关闭"
+                               style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction *action) {
+                                 [self.navigationController popViewControllerAnimated:NO];
+                             }];
+    [self warningMessage:@"暂未识别出二维码" action:action];
 }
 
 /*****************************************************************************************************/
@@ -171,14 +185,31 @@
         [scanManager stopRunning];
         
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
-        NSLog(@"mgr: %@", [obj stringValue]);
+//        NSLog(@"mgr: %@", [obj stringValue]);
         NSString *scanResult = [obj stringValue];
         if (scanResult) {
-            self.scanResult = scanResult;
+            WAWebUrlVC *vc = [[WAWebUrlVC alloc] init];
+            vc.strUrl = scanResult;
+            [self.navigationController pushViewController:vc animated:NO];
+        } else {
+            NSLog(@"识别扫描的二维码失败");
+            UIAlertAction *action
+            = [UIAlertAction actionWithTitle:@"关闭"
+                                       style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction *action) {
+                                         [scanManager startRunning];
+                                     }];
+            [self warningMessage:@"识别扫描的二维码失败" action:action];
         }
     } else {
         NSLog(@"暂未识别出扫描的二维码");
-        [self warningMessage:@"暂未识别出扫描的二维码"];
+        UIAlertAction *action
+        = [UIAlertAction actionWithTitle:@"关闭"
+                                   style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction *action) {
+                                     [scanManager startRunning];
+                                 }];
+        [self warningMessage:@"暂未识别出扫描的二维码" action:action];
     }
 }
 
@@ -201,16 +232,20 @@
 #pragma mark - warning message
 
 // 弹窗警告并返回
-- (void)warningMessage:(NSString *)message {
+- (void)warningMessage:(NSString *)message action:(UIAlertAction *)newAction {
     UIAlertControllerStyle style = UIAlertControllerStyleAlert;
     UIAlertController *alert
     = [UIAlertController alertControllerWithTitle:@"提示:" message:message preferredStyle:style];
-    UIAlertActionStyle actionStyle = UIAlertActionStyleDefault;
-    UIAlertAction *action
-    = [UIAlertAction actionWithTitle:@"关闭"
-                               style:actionStyle
-                             handler:^(UIAlertAction * _Nonnull action) {}];
-    [alert addAction:action];
+    
+    if (newAction == nil) {
+        UIAlertActionStyle actionStyle = UIAlertActionStyleDefault;
+        UIAlertAction *action
+        = [UIAlertAction actionWithTitle:@"关闭" style:actionStyle handler:^(UIAlertAction *action) {}];
+        [alert addAction:action];
+    } else {
+        [alert addAction:newAction];
+    }
+    
     [self presentViewController:alert animated:YES completion:^{ }];
 }
 

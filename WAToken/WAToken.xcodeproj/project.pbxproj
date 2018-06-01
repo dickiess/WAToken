@@ -36,8 +36,13 @@
 		1B00956420B567B1002E7C99 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B00956320B567B1002E7C99 /* AVFoundation.framework */; };
 		1B00956920B56D43002E7C99 /* WAAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B00956720B56D43002E7C99 /* WAAgreementVC.m */; };
 		1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B00956820B56D43002E7C99 /* WAAgreementVC.xib */; };
+		1B4F14E520C1198D0089B3D4 /* WAWideGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F14E420C1198D0089B3D4 /* WAWideGridButton.m */; };
+		1B4F14E820C11BA90089B3D4 /* WATitleGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F14E720C11BA90089B3D4 /* WATitleGridButton.m */; };
 		1B63D12820B6645700487C43 /* RichNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63D12720B6645700487C43 /* RichNavigationController.m */; };
 		1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B63D12920B66A5300487C43 /* protocol_cn.html */; };
+		1B7567C220BF87A800F2B3C6 /* WAWebUrlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7567C020BF87A800F2B3C6 /* WAWebUrlVC.m */; };
+		1B7567C320BF87A800F2B3C6 /* WAWebUrlVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7567C120BF87A800F2B3C6 /* WAWebUrlVC.xib */; };
+		1B7B069F20BFD193006527E6 /* WAGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B069E20BFD193006527E6 /* WAGridButton.m */; };
 		1BB13D3720B7BF500046132B /* RichItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BF820B7BF4F0046132B /* RichItem.m */; };
 		1BB13D3820B7BF500046132B /* RichFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BF920B7BF4F0046132B /* RichFile.m */; };
 		1BB13D3920B7BF500046132B /* RichFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BFD20B7BF4F0046132B /* RichFolder.m */; };
@@ -417,9 +422,18 @@
 		1B00956620B56D43002E7C99 /* WAAgreementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAAgreementVC.h; sourceTree = "<group>"; };
 		1B00956720B56D43002E7C99 /* WAAgreementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAAgreementVC.m; sourceTree = "<group>"; };
 		1B00956820B56D43002E7C99 /* WAAgreementVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAAgreementVC.xib; sourceTree = "<group>"; };
+		1B4F14E320C1198D0089B3D4 /* WAWideGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAWideGridButton.h; sourceTree = "<group>"; };
+		1B4F14E420C1198D0089B3D4 /* WAWideGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAWideGridButton.m; sourceTree = "<group>"; };
+		1B4F14E620C11BA90089B3D4 /* WATitleGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATitleGridButton.h; sourceTree = "<group>"; };
+		1B4F14E720C11BA90089B3D4 /* WATitleGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATitleGridButton.m; sourceTree = "<group>"; };
 		1B63D12620B6645700487C43 /* RichNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RichNavigationController.h; sourceTree = "<group>"; };
 		1B63D12720B6645700487C43 /* RichNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichNavigationController.m; sourceTree = "<group>"; };
 		1B63D12920B66A5300487C43 /* protocol_cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = protocol_cn.html; sourceTree = "<group>"; };
+		1B7567BF20BF87A800F2B3C6 /* WAWebUrlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAWebUrlVC.h; sourceTree = "<group>"; };
+		1B7567C020BF87A800F2B3C6 /* WAWebUrlVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAWebUrlVC.m; sourceTree = "<group>"; };
+		1B7567C120BF87A800F2B3C6 /* WAWebUrlVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAWebUrlVC.xib; sourceTree = "<group>"; };
+		1B7B069D20BFD193006527E6 /* WAGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAGridButton.h; sourceTree = "<group>"; };
+		1B7B069E20BFD193006527E6 /* WAGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAGridButton.m; sourceTree = "<group>"; };
 		1BB13BF820B7BF4F0046132B /* RichItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichItem.m; sourceTree = "<group>"; };
 		1BB13BF920B7BF4F0046132B /* RichFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichFile.m; sourceTree = "<group>"; };
 		1BB13BFA20B7BF4F0046132B /* RichFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichFolder.h; sourceTree = "<group>"; };
@@ -2591,9 +2605,15 @@
 		1BD32A9D20BB9C6B005606D4 /* 05.主页 */ = {
 			isa = PBXGroup;
 			children = (
+				1B7B069D20BFD193006527E6 /* WAGridButton.h */,
+				1B7B069E20BFD193006527E6 /* WAGridButton.m */,
 				1BD32AA820BBCE19005606D4 /* WAMainPageVC.h */,
 				1BD32AA920BBCE19005606D4 /* WAMainPageVC.m */,
 				1BD32AAA20BBCE19005606D4 /* WAMainPageVC.xib */,
+				1B4F14E620C11BA90089B3D4 /* WATitleGridButton.h */,
+				1B4F14E720C11BA90089B3D4 /* WATitleGridButton.m */,
+				1B4F14E320C1198D0089B3D4 /* WAWideGridButton.h */,
+				1B4F14E420C1198D0089B3D4 /* WAWideGridButton.m */,
 			);
 			path = "05.主页";
 			sourceTree = "<group>";
@@ -2639,6 +2659,9 @@
 				1BD32AB220BBDAC4005606D4 /* WAQRCodeScanVC.h */,
 				1BD32AB320BBDAC4005606D4 /* WAQRCodeScanVC.m */,
 				1BD32AB420BBDAC4005606D4 /* WAQRCodeScanVC.xib */,
+				1B7567BF20BF87A800F2B3C6 /* WAWebUrlVC.h */,
+				1B7567C020BF87A800F2B3C6 /* WAWebUrlVC.m */,
+				1B7567C120BF87A800F2B3C6 /* WAWebUrlVC.xib */,
 			);
 			path = "11.扫码";
 			sourceTree = "<group>";
@@ -2796,6 +2819,7 @@
 				1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */,
 				1BB13FED20B7F0050046132B /* MWPhotoBrowser.bundle in Resources */,
 				1B00941F20B55440002E7C99 /* Main.storyboard in Resources */,
+				1B7567C320BF87A800F2B3C6 /* WAWebUrlVC.xib in Resources */,
 				1B00950A20B558DE002E7C99 /* WARegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2937,6 +2961,7 @@
 				1BB13FE720B7F0050046132B /* UIImage+EMWebP.m in Sources */,
 				1B00950C20B558DE002E7C99 /* WALoginVC.m in Sources */,
 				1BB13D5A20B7BF500046132B /* Lzma2Encoder.cpp in Sources */,
+				1B7567C220BF87A800F2B3C6 /* WAWebUrlVC.m in Sources */,
 				1B00950B20B558DE002E7C99 /* WARegisterVC.m in Sources */,
 				1B00951220B558DE002E7C99 /* NSString+Trimming.m in Sources */,
 				1BB13D9820B7BF500046132B /* XzCrc64Opt.c in Sources */,
@@ -2996,6 +3021,7 @@
 				1BB13D8220B7BF500046132B /* CreateCoder.cpp in Sources */,
 				1BB13D8820B7BF500046132B /* LzFindMt.c in Sources */,
 				1BB13F0120B7DA640046132B /* HJViewFactory.m in Sources */,
+				1B4F14E520C1198D0089B3D4 /* WAWideGridButton.m in Sources */,
 				1BB13D3820B7BF500046132B /* RichFile.m in Sources */,
 				1BB13ED020B7DA640046132B /* MultipartMessageHeaderField.m in Sources */,
 				1BB13D3920B7BF500046132B /* RichFolder.m in Sources */,
@@ -3055,6 +3081,7 @@
 				1BB13EEC20B7DA640046132B /* KxMenu.m in Sources */,
 				1BB13F2320B7DA640046132B /* NSData+ImageContentType.m in Sources */,
 				1B00951620B558DE002E7C99 /* Utilities.m in Sources */,
+				1B7B069F20BFD193006527E6 /* WAGridButton.m in Sources */,
 				1BB13FFF20B7F0050046132B /* MBProgressHUD+Add.m in Sources */,
 				1BB13ED320B7DA640046132B /* HTTPAuthenticationRequest.m in Sources */,
 				1BB13FE420B7F0050046132B /* EMSDWebImageDecoder.m in Sources */,
@@ -3072,6 +3099,7 @@
 				1BB13D4020B7BF500046132B /* ioapi.c in Sources */,
 				1BB13F2420B7DA640046132B /* UIImageView+WebCache.m in Sources */,
 				1BB13FF120B7F0050046132B /* UIView+Layout.m in Sources */,
+				1B4F14E820C11BA90089B3D4 /* WATitleGridButton.m in Sources */,
 				1BB13DA920B7BF500046132B /* LzmaSDKObjCExtractCallback.mm in Sources */,
 				1BB13FFA20B7F0050046132B /* SelwynAttaCollectionViewCell.m in Sources */,
 				1BB13D8620B7BF500046132B /* LzmaEnc.c in Sources */,
