@@ -2188,8 +2188,8 @@
 		1BB13E4920B7DA630046132B /* ProgressButton */ = {
 			isa = PBXGroup;
 			children = (
-				1BB13E4A20B7DA630046132B /* RichProgressButton.m */,
 				1BB13E4B20B7DA630046132B /* RichProgressButton.h */,
+				1BB13E4A20B7DA630046132B /* RichProgressButton.m */,
 			);
 			path = ProgressButton;
 			sourceTree = "<group>";

@@ -13,5 +13,14 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subtitleLabel;
 @property (nonatomic, assign) CGFloat process;
+@property (nonatomic, strong) UIButton *button;
+
++ (WAWideGridButton *)buttonInitWithPoint:(CGPoint)pt
+                                    title:(NSString *)title
+                                 subtitle:(NSString *)subtitle
+                                  process:(CGFloat)process
+                                    index:(NSInteger)idx;
+
+- (void)updateProcess:(CGFloat)process;
 
 @end

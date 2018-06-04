@@ -16,7 +16,7 @@
 #define mainTitleWidth  (frameWidth*125/125)         // 主题文字尺寸参考宽度125
 #define mainTitleHeight (frameHeight*35/125)         // 主题文字尺寸参考高度35
 #define mainTitle_x     (frameWidth * 0/125)         // 主题文字X位置参考位置居中
-#define mainTitle_y     (frameHeight*32/125)         // 主题文字Y位置参考位置32
+#define mainTitle_y     (frameHeight*28/125)         // 主题文字Y位置参考位置28
 #define subTitleWidth   (frameWidth*125/125)         // 辅助文字尺寸参考宽度125
 #define subTitleHeight  (frameHeight*28/125)         // 辅助文字尺寸参考高度28
 #define subTitle_x      (frameWidth * 0/125)         // 辅助文字X位置参考位置0
@@ -72,9 +72,6 @@
     return wButton;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-}
 
 /*
 // Only override drawRect: if you perform custom drawing.

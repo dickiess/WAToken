@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MV-Nv-QKu" userLabel="NavigationBar">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-aP-9al" userLabel="scanButton">
-                            <rect key="frame" x="14" y="27" width="22" height="22"/>
+                            <rect key="frame" x="14" y="28" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="e4l-RV-KsL"/>
                                 <constraint firstAttribute="width" constant="22" id="xbd-Fn-io9"/>
@@ -35,7 +35,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYF-iM-evv" userLabel="setButton">
-                            <rect key="frame" x="336" y="25" width="25" height="25"/>
+                            <rect key="frame" x="336" y="26" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="HmZ-Vd-N2a"/>
                                 <constraint firstAttribute="width" constant="25" id="WaO-F6-i5C"/>
@@ -56,7 +56,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-zC-vxE" userLabel="Line">
-                            <rect key="frame" x="0.0" y="54" width="375" height="1"/>
+                            <rect key="frame" x="0.0" y="59" width="375" height="1"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="q9W-eh-Cnd"/>
@@ -66,19 +66,19 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="WYF-iM-evv" secondAttribute="trailing" constant="14" id="3hN-51-FHx"/>
-                        <constraint firstAttribute="bottom" secondItem="Hs2-Hq-ARa" secondAttribute="bottom" constant="3" id="4I5-gz-JnA"/>
+                        <constraint firstAttribute="bottom" secondItem="Hs2-Hq-ARa" secondAttribute="bottom" constant="8" id="4I5-gz-JnA"/>
                         <constraint firstItem="IIS-zC-vxE" firstAttribute="leading" secondItem="0MV-Nv-QKu" secondAttribute="leading" id="FDP-vQ-FrQ"/>
-                        <constraint firstAttribute="bottom" secondItem="WYF-iM-evv" secondAttribute="bottom" constant="5" id="Hlc-L8-tT8"/>
+                        <constraint firstAttribute="bottom" secondItem="WYF-iM-evv" secondAttribute="bottom" constant="9" id="Hlc-L8-tT8"/>
                         <constraint firstAttribute="bottom" secondItem="IIS-zC-vxE" secondAttribute="bottom" id="Nb9-Pv-zEH"/>
-                        <constraint firstAttribute="height" constant="55" id="Rvt-bL-CaQ"/>
+                        <constraint firstAttribute="height" constant="60" id="Rvt-bL-CaQ"/>
                         <constraint firstItem="Hs2-Hq-ARa" firstAttribute="centerX" secondItem="0MV-Nv-QKu" secondAttribute="centerX" id="WWd-1j-tsf"/>
                         <constraint firstItem="3gF-aP-9al" firstAttribute="leading" secondItem="0MV-Nv-QKu" secondAttribute="leading" constant="14" id="X7n-L8-cXx"/>
-                        <constraint firstAttribute="bottom" secondItem="3gF-aP-9al" secondAttribute="bottom" constant="6" id="aMP-aH-s1f"/>
+                        <constraint firstAttribute="bottom" secondItem="3gF-aP-9al" secondAttribute="bottom" constant="10" id="aMP-aH-s1f"/>
                         <constraint firstAttribute="trailing" secondItem="IIS-zC-vxE" secondAttribute="trailing" id="yPn-d3-aia"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSj-r2-BKQ">
-                    <rect key="frame" x="0.0" y="55" width="375" height="612"/>
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>

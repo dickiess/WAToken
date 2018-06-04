@@ -13,8 +13,8 @@
 #define frameWidth   ([[UIScreen mainScreen] bounds].size.width/3)
                                                   // 框架尺寸参考宽度屏幕3分之一
 #define frameHeight  (frameWidth)                 // 框架尺寸参考高度与宽度一致
-#define imageWidth   (frameWidth *35/125)         // 图片尺寸参考宽度35
-#define imageHeight  (frameHeight*35/125)         // 图片尺寸参考高度35
+#define imageWidth   (frameWidth *30/125)         // 图片尺寸参考宽度35
+#define imageHeight  (frameHeight*30/125)         // 图片尺寸参考高度35
 #define image_x      ((frameWidth-imageWidth)/2)  // 图片X位置参考位置居中
 #define image_y      (frameHeight*32/125)         // 图片Y位置参考位置32
 #define titleWidth   (frameWidth*125/125)         // 文字尺寸参考宽度125
@@ -69,9 +69,6 @@
     return wButton;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-}
 
 /*
 // Only override drawRect: if you perform custom drawing.

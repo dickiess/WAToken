@@ -8,6 +8,8 @@
 
 #import "RichProgressButton.h"
 
+#import "MyDevice.h"
+
 @interface RichProgressButton ()
 
 @property (nonatomic, assign) CGFloat moveWidth;
@@ -30,7 +32,7 @@
         _textLabel = [[UILabel alloc] initWithFrame:rect];
         _textLabel.textColor = [UIColor whiteColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
-        _textLabel.font = [UIFont fontWithName:@"GillSans-SemiBold" size:27];
+        _textLabel.font = [UIFont fontWithName:@"GillSans-SemiBold" size:DEVICE_IPAD ? 28:16];
         [self addSubview:_textLabel];
     }
     return self;

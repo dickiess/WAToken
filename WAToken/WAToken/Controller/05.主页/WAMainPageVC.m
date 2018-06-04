@@ -9,6 +9,7 @@
 #import "WAMainPageVC.h"
 #import "WAQRCodeScanVC.h"
 
+#import "WAWideGridButton.h"
 #import "WATitleGridButton.h"
 #import "WAGridButton.h"
 
@@ -17,6 +18,8 @@
 @interface WAMainPageVC ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (strong, nonatomic) WAWideGridButton  *btn1;
 
 @property (strong, nonatomic) WATitleGridButton *btn11;
 @property (strong, nonatomic) WATitleGridButton *btn12;
@@ -60,60 +63,84 @@
     // 基本数据
     CGFloat w = FULL_SCREEN.width / 3;
     CGFloat h = w;
-    CGFloat gap = 15;
+    CGFloat gap = 13;
     
     // scrollview
     CGSize sSize = FULL_SCREEN;
     sSize.height = h*(2+3)+gap*2;
     _scrollView.contentSize = sSize;
     
-    // 
+    //
+    CGPoint pt = CGPointMake(w*0, h*0+gap*1);
+    [self addButton:_btn1
+              title:@"WAToken ( Richard 的磁盘空间 )"
+           subTitle:@"已用42.58GB，共60.00GB"
+            process:0.0f point:pt index:10];
     
     // title button
-    CGPoint pt = CGPointMake(w*0, h*0+gap*1);
+    pt = CGPointMake(w*0, h*1+gap*1);
     [self addButton:_btn11 title:@"正常" subTitle:@"设备管理" point:pt index:11];
 
-    pt = CGPointMake(w*1, h*0+gap*1);
+    pt = CGPointMake(w*1, h*1+gap*1);
     [self addButton:_btn12 title:@"1025" subTitle:@"CBC积分" point:pt index:12];
     
-    pt = CGPointMake(w*2, h*0+gap*1);
+    pt = CGPointMake(w*2, h*1+gap*1);
     [self addButton:_btn13 title:@"1人" subTitle:@"成员管理" point:pt index:13];
     
     // grid button
-    pt = CGPointMake(w*0, h*1+gap*2);
+    pt = CGPointMake(w*0, h*2+gap*2);
     [self addButton:_btn21 image:[UIImage imageNamed:@"ico_backup"] title:@"自动备份"
               point:pt index:21];
     
-    pt = CGPointMake(w*1, h*1+gap*2);
+    pt = CGPointMake(w*1, h*2+gap*2);
     [self addButton:_btn22 image:[UIImage imageNamed:@"ico_download"] title:@"远程下载"
               point:pt index:22];
     
-    pt = CGPointMake(w*2, h*1+gap*2);
+    pt = CGPointMake(w*2, h*2+gap*2);
     [self addButton:_btn23 image:[UIImage imageNamed:@"ico_safe_box"] title:@"保险箱"
               point:pt index:23];
     
-    pt = CGPointMake(w*0, h*2+gap*2);
+    pt = CGPointMake(w*0, h*3+gap*2);
     [self addButton:_btn24 image:[UIImage imageNamed:@"ico_trash_can"] title:@"最近删除"
               point:pt index:24];
 
-    pt = CGPointMake(w*1, h*2+gap*2);
+    pt = CGPointMake(w*1, h*3+gap*2);
     [self addButton:_btn25 image:[UIImage imageNamed:@"ico_movie"] title:@"我的电影"
               point:pt index:25];
 
-    pt = CGPointMake(w*2, h*2+gap*2);
+    pt = CGPointMake(w*2, h*3+gap*2);
     [self addButton:_btn26 image:[UIImage imageNamed:@"ico_other_device"] title:@"外接设备"
               point:pt index:26];
 
-    pt = CGPointMake(w*0, h*3+gap*2);
+    pt = CGPointMake(w*0, h*4+gap*2);
     [self addButton:_btn27 image:[UIImage imageNamed:@"ico_favourite_book"] title:@"我的收藏"
               point:pt index:27];
     
-    pt = CGPointMake(w*1, h*3+gap*2);
+    pt = CGPointMake(w*1, h*4+gap*2);
     [self addButton:_btn28 image:[UIImage imageNamed:@"ico_double_backup"] title:@"双重备份"
               point:pt index:28];
     
-    pt = CGPointMake(w*2, h*3+gap*2);
+    pt = CGPointMake(w*2, h*4+gap*2);
     [self addButton:_btn29 image:[UIImage imageNamed:@""] title:@"" point:pt index:29];
+}
+
+// 省力加载按钮
+- (void)addButton:(WAWideGridButton *)btn
+            title:(NSString *)title
+         subTitle:(NSString *)sTitle
+          process:(CGFloat)process
+            point:(CGPoint)pt
+            index:(NSInteger)idx {
+    btn = [WAWideGridButton buttonInitWithPoint:pt
+                                          title:title
+                                       subtitle:sTitle
+                                        process:process
+                                          index:idx];
+    [btn.button addTarget:self
+                   action:@selector(buttonAction:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:btn];
+    _btn1 = btn;
 }
 
 // 省力加载按钮
@@ -178,7 +205,7 @@
 }
 
 - (IBAction)setAction:(UIButton *)sender {
-    
+    [_btn1 updateProcess:0.1f];
 }
 
 /*****************************************************************************************************/
