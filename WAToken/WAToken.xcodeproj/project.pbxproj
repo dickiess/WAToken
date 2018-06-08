@@ -38,11 +38,21 @@
 		1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B00956820B56D43002E7C99 /* WAAgreementVC.xib */; };
 		1B4F14E520C1198D0089B3D4 /* WAWideGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F14E420C1198D0089B3D4 /* WAWideGridButton.m */; };
 		1B4F14E820C11BA90089B3D4 /* WATitleGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F14E720C11BA90089B3D4 /* WATitleGridButton.m */; };
+		1B4F81B220C62B4100B0BDF4 /* WASettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F81B020C62B4100B0BDF4 /* WASettingVC.m */; };
+		1B4F81B320C62B4100B0BDF4 /* WASettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F81B120C62B4100B0BDF4 /* WASettingVC.xib */; };
+		1B4F81BB20C665DB00B0BDF4 /* DSSettingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F81B720C665DB00B0BDF4 /* DSSettingDataSource.m */; };
+		1B4F81BC20C665DB00B0BDF4 /* DSSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F81B820C665DB00B0BDF4 /* DSSettingItem.m */; };
+		1B4F81BD20C665DB00B0BDF4 /* DSSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F81B920C665DB00B0BDF4 /* DSSettingCell.m */; };
 		1B63D12820B6645700487C43 /* RichNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63D12720B6645700487C43 /* RichNavigationController.m */; };
 		1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B63D12920B66A5300487C43 /* protocol_cn.html */; };
 		1B7567C220BF87A800F2B3C6 /* WAWebUrlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7567C020BF87A800F2B3C6 /* WAWebUrlVC.m */; };
 		1B7567C320BF87A800F2B3C6 /* WAWebUrlVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7567C120BF87A800F2B3C6 /* WAWebUrlVC.xib */; };
 		1B7B069F20BFD193006527E6 /* WAGridButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B069E20BFD193006527E6 /* WAGridButton.m */; };
+		1B80969920C7C5FA008B810C /* WATransferVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B80969720C7C5FA008B810C /* WATransferVC.m */; };
+		1B80969A20C7C5FB008B810C /* WATransferVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B80969820C7C5FA008B810C /* WATransferVC.xib */; };
+		1B8096A320C7C7C7008B810C /* WAPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8096A220C7C7C7008B810C /* WAPullDownMenu.m */; };
+		1BAB34D920CA4F90009DE3A9 /* WATransferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAB34D720CA4F90009DE3A9 /* WATransferCell.m */; };
+		1BAB34DA20CA4F90009DE3A9 /* WATransferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BAB34D820CA4F90009DE3A9 /* WATransferCell.xib */; };
 		1BB13D3720B7BF500046132B /* RichItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BF820B7BF4F0046132B /* RichItem.m */; };
 		1BB13D3820B7BF500046132B /* RichFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BF920B7BF4F0046132B /* RichFile.m */; };
 		1BB13D3920B7BF500046132B /* RichFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB13BFD20B7BF4F0046132B /* RichFolder.m */; };
@@ -349,6 +359,7 @@
 		1BD32ACB20BBE1BA005606D4 /* SGQRCodeScanManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32ABF20BBE1BA005606D4 /* SGQRCodeScanManager.m */; };
 		1BD32ACC20BBE1BA005606D4 /* SGQRCodeGenerateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AC020BBE1BA005606D4 /* SGQRCodeGenerateManager.m */; };
 		1BD32ACD20BBE1BA005606D4 /* SGQRCodeAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD32AC520BBE1BA005606D4 /* SGQRCodeAlbumManager.m */; };
+		1BF984AA20C8CFA9003DB984 /* CALayer+PulldownAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF984A920C8CFA9003DB984 /* CALayer+PulldownAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +437,15 @@
 		1B4F14E420C1198D0089B3D4 /* WAWideGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAWideGridButton.m; sourceTree = "<group>"; };
 		1B4F14E620C11BA90089B3D4 /* WATitleGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATitleGridButton.h; sourceTree = "<group>"; };
 		1B4F14E720C11BA90089B3D4 /* WATitleGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATitleGridButton.m; sourceTree = "<group>"; };
+		1B4F81AF20C62B4100B0BDF4 /* WASettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WASettingVC.h; sourceTree = "<group>"; };
+		1B4F81B020C62B4100B0BDF4 /* WASettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WASettingVC.m; sourceTree = "<group>"; };
+		1B4F81B120C62B4100B0BDF4 /* WASettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WASettingVC.xib; sourceTree = "<group>"; };
+		1B4F81B520C665DB00B0BDF4 /* DSSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingCell.h; sourceTree = "<group>"; };
+		1B4F81B620C665DB00B0BDF4 /* DSSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingItem.h; sourceTree = "<group>"; };
+		1B4F81B720C665DB00B0BDF4 /* DSSettingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSettingDataSource.m; sourceTree = "<group>"; };
+		1B4F81B820C665DB00B0BDF4 /* DSSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSettingItem.m; sourceTree = "<group>"; };
+		1B4F81B920C665DB00B0BDF4 /* DSSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSettingCell.m; sourceTree = "<group>"; };
+		1B4F81BA20C665DB00B0BDF4 /* DSSettingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingDataSource.h; sourceTree = "<group>"; };
 		1B63D12620B6645700487C43 /* RichNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RichNavigationController.h; sourceTree = "<group>"; };
 		1B63D12720B6645700487C43 /* RichNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichNavigationController.m; sourceTree = "<group>"; };
 		1B63D12920B66A5300487C43 /* protocol_cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = protocol_cn.html; sourceTree = "<group>"; };
@@ -434,6 +454,14 @@
 		1B7567C120BF87A800F2B3C6 /* WAWebUrlVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WAWebUrlVC.xib; sourceTree = "<group>"; };
 		1B7B069D20BFD193006527E6 /* WAGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAGridButton.h; sourceTree = "<group>"; };
 		1B7B069E20BFD193006527E6 /* WAGridButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAGridButton.m; sourceTree = "<group>"; };
+		1B80969620C7C5FA008B810C /* WATransferVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATransferVC.h; sourceTree = "<group>"; };
+		1B80969720C7C5FA008B810C /* WATransferVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATransferVC.m; sourceTree = "<group>"; };
+		1B80969820C7C5FA008B810C /* WATransferVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WATransferVC.xib; sourceTree = "<group>"; };
+		1B8096A120C7C7C7008B810C /* WAPullDownMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAPullDownMenu.h; sourceTree = "<group>"; };
+		1B8096A220C7C7C7008B810C /* WAPullDownMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAPullDownMenu.m; sourceTree = "<group>"; };
+		1BAB34D620CA4F90009DE3A9 /* WATransferCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WATransferCell.h; sourceTree = "<group>"; };
+		1BAB34D720CA4F90009DE3A9 /* WATransferCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WATransferCell.m; sourceTree = "<group>"; };
+		1BAB34D820CA4F90009DE3A9 /* WATransferCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WATransferCell.xib; sourceTree = "<group>"; };
 		1BB13BF820B7BF4F0046132B /* RichItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichItem.m; sourceTree = "<group>"; };
 		1BB13BF920B7BF4F0046132B /* RichFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichFile.m; sourceTree = "<group>"; };
 		1BB13BFA20B7BF4F0046132B /* RichFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichFolder.h; sourceTree = "<group>"; };
@@ -1116,6 +1144,8 @@
 		1BD32AC420BBE1BA005606D4 /* SGQRCodeScanManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanManager.h; sourceTree = "<group>"; };
 		1BD32AC520BBE1BA005606D4 /* SGQRCodeAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeAlbumManager.m; sourceTree = "<group>"; };
 		1BD32AC620BBE1BA005606D4 /* SGQRCodeGenerateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeGenerateManager.h; sourceTree = "<group>"; };
+		1BF984A820C8CFA9003DB984 /* CALayer+PulldownAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+PulldownAnimation.h"; sourceTree = "<group>"; };
+		1BF984A920C8CFA9003DB984 /* CALayer+PulldownAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+PulldownAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1369,6 +1399,19 @@
 				1B00956820B56D43002E7C99 /* WAAgreementVC.xib */,
 			);
 			path = "03.服务协议";
+			sourceTree = "<group>";
+		};
+		1B4F81B420C665DB00B0BDF4 /* DSSettingDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				1B4F81B520C665DB00B0BDF4 /* DSSettingCell.h */,
+				1B4F81B620C665DB00B0BDF4 /* DSSettingItem.h */,
+				1B4F81B720C665DB00B0BDF4 /* DSSettingDataSource.m */,
+				1B4F81B820C665DB00B0BDF4 /* DSSettingItem.m */,
+				1B4F81B920C665DB00B0BDF4 /* DSSettingCell.m */,
+				1B4F81BA20C665DB00B0BDF4 /* DSSettingDataSource.h */,
+			);
+			path = DSSettingDataSource;
 			sourceTree = "<group>";
 		};
 		1B63D12520B6641900487C43 /* Base */ = {
@@ -1855,6 +1898,7 @@
 				1BB13E2F20B7DA630046132B /* AFNetworkApi */,
 				1BB13E4C20B7DA630046132B /* AFNetworking */,
 				1BB13E1C20B7DA630046132B /* CTAssetsPicker */,
+				1B4F81B420C665DB00B0BDF4 /* DSSettingDataSource */,
 				1BB13E2E20B7DA630046132B /* GCDSocket */,
 				1BB13E5A20B7DA630046132B /* HJVideo */,
 				1BB13FC020B7F0050046132B /* KeyChain */,
@@ -2621,6 +2665,16 @@
 		1BD32A9E20BB9C6B005606D4 /* 06.传输 */ = {
 			isa = PBXGroup;
 			children = (
+				1BF984A820C8CFA9003DB984 /* CALayer+PulldownAnimation.h */,
+				1BF984A920C8CFA9003DB984 /* CALayer+PulldownAnimation.m */,
+				1B8096A120C7C7C7008B810C /* WAPullDownMenu.h */,
+				1B8096A220C7C7C7008B810C /* WAPullDownMenu.m */,
+				1BAB34D620CA4F90009DE3A9 /* WATransferCell.h */,
+				1BAB34D720CA4F90009DE3A9 /* WATransferCell.m */,
+				1BAB34D820CA4F90009DE3A9 /* WATransferCell.xib */,
+				1B80969620C7C5FA008B810C /* WATransferVC.h */,
+				1B80969720C7C5FA008B810C /* WATransferVC.m */,
+				1B80969820C7C5FA008B810C /* WATransferVC.xib */,
 			);
 			path = "06.传输";
 			sourceTree = "<group>";
@@ -2649,6 +2703,9 @@
 		1BD32AA220BB9C6C005606D4 /* 10.设置 */ = {
 			isa = PBXGroup;
 			children = (
+				1B4F81AF20C62B4100B0BDF4 /* WASettingVC.h */,
+				1B4F81B020C62B4100B0BDF4 /* WASettingVC.m */,
+				1B4F81B120C62B4100B0BDF4 /* WASettingVC.xib */,
 			);
 			path = "10.设置";
 			sourceTree = "<group>";
@@ -2800,6 +2857,7 @@
 			files = (
 				1B00942420B55442002E7C99 /* LaunchScreen.storyboard in Resources */,
 				1BB13EFF20B7DA640046132B /* videoImages.bundle in Resources */,
+				1BAB34DA20CA4F90009DE3A9 /* WATransferCell.xib in Resources */,
 				1BB13EBF20B7DA640046132B /* upload.html in Resources */,
 				1B00950E20B558DE002E7C99 /* WAOpeningVC.xib in Resources */,
 				1BB13EC420B7DA640046132B /* SGWiFiUpload.bundle in Resources */,
@@ -2813,9 +2871,11 @@
 				1B00956A20B56D43002E7C99 /* WAAgreementVC.xib in Resources */,
 				1BB13EDF20B7DA640046132B /* About.md in Resources */,
 				1BB13FF320B7F0050046132B /* TZImagePickerController.bundle in Resources */,
+				1B4F81B320C62B4100B0BDF4 /* WASettingVC.xib in Resources */,
 				1BD32AB620BBDAC4005606D4 /* WAQRCodeScanVC.xib in Resources */,
 				1BB13D4520B7BF500046132B /* README.md in Resources */,
 				1BD32AAC20BBCE19005606D4 /* WAMainPageVC.xib in Resources */,
+				1B80969A20C7C5FB008B810C /* WATransferVC.xib in Resources */,
 				1B63D12A20B66A5400487C43 /* protocol_cn.html in Resources */,
 				1BB13FED20B7F0050046132B /* MWPhotoBrowser.bundle in Resources */,
 				1B00941F20B55440002E7C99 /* Main.storyboard in Resources */,
@@ -2864,6 +2924,7 @@
 				1BB13D8F20B7BF500046132B /* Lzma2Enc.c in Sources */,
 				1BB13DA220B7BF500046132B /* LzmaSDKObjCWriter.mm in Sources */,
 				1BD32A9C20BB8B31005606D4 /* WATabBar.m in Sources */,
+				1B4F81B220C62B4100B0BDF4 /* WASettingVC.m in Sources */,
 				1BB13D4F20B7BF500046132B /* MyWindows.cpp in Sources */,
 				1BB13D9A20B7BF500046132B /* Threads.c in Sources */,
 				1BB13FEA20B7F0050046132B /* EMSDWebImageCompat.m in Sources */,
@@ -2876,6 +2937,8 @@
 				1BB13FFC20B7F0050046132B /* SelwynFormBaseTableViewCell.m in Sources */,
 				1BB13D6420B7BF500046132B /* ItemNameUtils.cpp in Sources */,
 				1BB13DA120B7BF500046132B /* LzmaSDKObjCFileDecoder.cpp in Sources */,
+				1BAB34D920CA4F90009DE3A9 /* WATransferCell.m in Sources */,
+				1B4F81BB20C665DB00B0BDF4 /* DSSettingDataSource.m in Sources */,
 				1BB13F0F20B7DA640046132B /* HJVideoPlayerController.m in Sources */,
 				1BB13F2820B7DA640046132B /* UIView+WebCache.m in Sources */,
 				1BB13D4820B7BF500046132B /* MyString.cpp in Sources */,
@@ -2890,6 +2953,7 @@
 				1BB13ED420B7DA640046132B /* DDNumber.m in Sources */,
 				1BB13FD920B7F0050046132B /* PSTCollectionView.m in Sources */,
 				1BB13F0E20B7DA640046132B /* HJCircleLoading.m in Sources */,
+				1BF984AA20C8CFA9003DB984 /* CALayer+PulldownAnimation.m in Sources */,
 				1BB13ED620B7DA640046132B /* DDRange.m in Sources */,
 				1BB13EF520B7DA640046132B /* UIWebView+AFNetworking.m in Sources */,
 				1BB13F0A20B7DA640046132B /* HJVideoPlayTimeRecord.m in Sources */,
@@ -2918,6 +2982,7 @@
 				1BB13FDB20B7F0050046132B /* PSTCollectionViewLayout.m in Sources */,
 				1BB13FE520B7F0050046132B /* UIImageView+EMWebCache.m in Sources */,
 				1BB13F1620B7DA640046132B /* SDWebImageManager.m in Sources */,
+				1B4F81BC20C665DB00B0BDF4 /* DSSettingItem.m in Sources */,
 				1BD32ACB20BBE1BA005606D4 /* SGQRCodeScanManager.m in Sources */,
 				1BB13FFB20B7F0050046132B /* SelwynFormSelectTableViewCell.m in Sources */,
 				1BB13F2020B7DA640046132B /* SDWebImagePrefetcher.m in Sources */,
@@ -2972,6 +3037,7 @@
 				1BB13EDE20B7DA640046132B /* DDAbstractDatabaseLogger.m in Sources */,
 				1BB13D6B20B7BF500046132B /* 7zProperties.cpp in Sources */,
 				1BB13DA520B7BF500046132B /* LzmaSDKObjCInFile.cpp in Sources */,
+				1B80969920C7C5FA008B810C /* WATransferVC.m in Sources */,
 				1BB13FD120B7F0050046132B /* PSTCollectionViewFlowLayout.m in Sources */,
 				1BB13D8D20B7BF500046132B /* Alloc.c in Sources */,
 				1BD32AAB20BBCE19005606D4 /* WAMainPageVC.m in Sources */,
@@ -3041,6 +3107,7 @@
 				1BB13D8420B7BF500046132B /* PropVariant.cpp in Sources */,
 				1BB13EC820B7DA640046132B /* HTTPDataResponse.m in Sources */,
 				1BB13F0920B7DA640046132B /* HJVideoConfigModel.m in Sources */,
+				1B4F81BD20C665DB00B0BDF4 /* DSSettingCell.m in Sources */,
 				1BB1400220B7F0050046132B /* RichKeyChain.m in Sources */,
 				1BB13EE920B7DA640046132B /* PrepareObj.m in Sources */,
 				1BB13D8120B7BF500046132B /* PropId.cpp in Sources */,
@@ -3101,6 +3168,7 @@
 				1BB13FF120B7F0050046132B /* UIView+Layout.m in Sources */,
 				1B4F14E820C11BA90089B3D4 /* WATitleGridButton.m in Sources */,
 				1BB13DA920B7BF500046132B /* LzmaSDKObjCExtractCallback.mm in Sources */,
+				1B8096A320C7C7C7008B810C /* WAPullDownMenu.m in Sources */,
 				1BB13FFA20B7F0050046132B /* SelwynAttaCollectionViewCell.m in Sources */,
 				1BB13D8620B7BF500046132B /* LzmaEnc.c in Sources */,
 				1BB13FCA20B7F0050046132B /* MWTapDetectingImageView.m in Sources */,

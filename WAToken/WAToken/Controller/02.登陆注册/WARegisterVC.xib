@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -183,19 +183,25 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuX-r9-o93" userLabel="NavigationBar">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-Oq-gOV">
-                            <rect key="frame" x="9" y="25" width="14" height="25"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-Oq-gOV">
+                            <rect key="frame" x="9" y="27" width="14" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="cvR-fZ-qL5"/>
+                                <constraint firstAttribute="width" constant="14" id="ihk-jy-hvf"/>
+                            </constraints>
                             <state key="normal" image="btn_back_blue"/>
                             <connections>
                                 <action selector="tapBack:" destination="-1" eventType="touchUpInside" id="GZK-8j-SSr"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFg-ku-qrx">
-                            <rect key="frame" x="27" y="22" width="33" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFg-ku-qrx">
+                            <rect key="frame" x="27" y="25" width="33" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0u9-mq-yLD"/>
+                                <constraint firstAttribute="width" constant="33" id="h79-eb-nzi"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="返回">
                                 <color key="titleColor" red="0.031372549020000001" green="0.29803921570000003" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,7 +212,11 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="55" id="nrd-Kz-uWE"/>
+                        <constraint firstAttribute="bottom" secondItem="WFg-ku-qrx" secondAttribute="bottom" constant="5" id="AAZ-Ok-May"/>
+                        <constraint firstAttribute="bottom" secondItem="Ur7-Oq-gOV" secondAttribute="bottom" constant="8" id="ZdH-6c-5fw"/>
+                        <constraint firstItem="WFg-ku-qrx" firstAttribute="leading" secondItem="Ur7-Oq-gOV" secondAttribute="trailing" constant="4" id="j3g-mo-psU"/>
+                        <constraint firstAttribute="height" constant="60" id="nrd-Kz-uWE"/>
+                        <constraint firstItem="Ur7-Oq-gOV" firstAttribute="leading" secondItem="iuX-r9-o93" secondAttribute="leading" constant="9" id="nxY-oO-wxk"/>
                     </constraints>
                 </view>
             </subviews>

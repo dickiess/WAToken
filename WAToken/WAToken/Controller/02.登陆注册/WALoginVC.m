@@ -9,6 +9,7 @@
 #import "WALoginVC.h"
 
 #import "WAServer.h"
+#import "RichKeyChain.h"
 
 #import "WARegisterVC.h"
 
@@ -102,6 +103,11 @@
                  callback:^(id obj) {
                      NSDictionary *info = (NSDictionary *)obj;
                      if ([info[@"result"] boolValue]) {
+                         // 保存用户
+                         [RichKeyChain keyChainSaveKey:WATOKEN_USER value:wSelf.textField1.text];
+                         // 创建用户并保存密码
+                         WA_API.user = [RichUser userWithUserID:wSelf.textField1.text];
+                         [WA_API savePrivateKey:info[@"pkey"]];
                          [self.navigationController popViewControllerAnimated:NO];
                      } else {
                          [wSelf warningMessage:info[@"message"]];
@@ -141,7 +147,7 @@
 
 // 测试登陆
 - (void)testLogin {
-    NSLog(@"用户: %@, 密码: %@", _textField1.text, _textField2.text);
+//    NSLog(@"用户: %@, 密码: %@", _textField1.text, _textField2.text);
 }
 
 /*****************************************************************************************************/

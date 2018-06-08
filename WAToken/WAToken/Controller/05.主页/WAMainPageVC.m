@@ -8,6 +8,7 @@
 
 #import "WAMainPageVC.h"
 #import "WAQRCodeScanVC.h"
+#import "WASettingVC.h"
 
 #import "WAWideGridButton.h"
 #import "WATitleGridButton.h"
@@ -35,6 +36,8 @@
 @property (strong, nonatomic) WAGridButton *btn28;
 @property (strong, nonatomic) WAGridButton *btn29;
 
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+
 @end
 
 /*****************************************************************************************************/
@@ -56,6 +59,7 @@
     [super viewDidAppear:animated];
     
     NSLog(@"=== WAMainPageVC ===");
+    [self fakeData];
 }
 
 // 视图布局
@@ -72,10 +76,7 @@
     
     //
     CGPoint pt = CGPointMake(w*0, h*0+gap*1);
-    [self addButton:_btn1
-              title:@"WAToken ( Richard 的磁盘空间 )"
-           subTitle:@"已用42.58GB，共60.00GB"
-            process:0.0f point:pt index:10];
+    [self addButton:_btn1 title:@"" subTitle:@"" process:0.0f point:pt index:10];
     
     // title button
     pt = CGPointMake(w*0, h*1+gap*1);
@@ -140,7 +141,11 @@
                    action:@selector(buttonAction:)
          forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:btn];
-    _btn1 = btn;
+    
+    switch (idx) {
+        case 10: _btn1 = btn; break;
+        default: break;
+    }
 }
 
 // 省力加载按钮
@@ -153,14 +158,17 @@
                                            title:title
                                         subtitle:sTitle
                                            index:idx];
-    
-//    UIColor *c = [UIColor colorWithHex:0xFFFF00 andAlpha:0.5f];
-//    [btn.button setBackgroundImage:[UIImage imageWithColor:c size:btn.frame.size]
-//                          forState:UIControlStateHighlighted];
     [btn.button addTarget:self
                    action:@selector(buttonAction:)
          forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:btn];
+    
+    switch (idx) {
+        case 11: _btn11 = btn; break;
+        case 12: _btn12 = btn; break;
+        case 13: _btn13 = btn; break;
+        default: break;
+    }
 }
 
 // 省力加载按钮
@@ -180,6 +188,19 @@
                    action:@selector(buttonAction:)
          forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:btn];
+    
+    switch (idx) {
+        case 21: _btn21 = btn; break;
+        case 22: _btn22 = btn; break;
+        case 23: _btn23 = btn; break;
+        case 24: _btn24 = btn; break;
+        case 25: _btn25 = btn; break;
+        case 26: _btn26 = btn; break;
+        case 27: _btn27 = btn; break;
+        case 28: _btn28 = btn; break;
+        case 29: _btn29 = btn; break;
+        default: break;
+    }
 }
 
 /*****************************************************************************************************/
@@ -205,7 +226,14 @@
 }
 
 - (IBAction)setAction:(UIButton *)sender {
-    [_btn1 updateProcess:0.1f];
+    WASettingVC *setVC = [[WASettingVC alloc] init];
+    [self.navigationController pushViewController:setVC animated:YES];
+}
+
+- (IBAction)tapStepper:(UIStepper *)sender {
+    CGFloat rate = _stepper.value;
+    _btn1.subtitleLabel.text = [NSString stringWithFormat:@"已用%.2fGB，共%.2fGB", rate*60.0f, 60.0f];
+    [_btn1 updateProcess:rate];
 }
 
 /*****************************************************************************************************/
@@ -230,5 +258,15 @@
     [self presentViewController:alert animated:YES completion:^{ }];
 }
 
+/*****************************************************************************************************/
+
+#pragma mark - fake data
+
+- (void)fakeData {
+    CGFloat rate = _stepper.value;
+    _btn1.titleLabel.text = @"WAToken ( Richard 的磁盘空间 )";
+    _btn1.subtitleLabel.text = [NSString stringWithFormat:@"已用%.2fGB，共%.2fGB", rate*60.0f, 60.0f];
+    [_btn1 updateProcess:rate];
+}
 
 @end

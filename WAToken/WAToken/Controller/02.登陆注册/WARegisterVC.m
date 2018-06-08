@@ -10,6 +10,7 @@
 #import "WAAgreementVC.h"
 
 #import "WAServer.h"
+#import "RichKeyChain.h"
 
 @interface WARegisterVC ()
 
@@ -50,7 +51,6 @@
     // textfield
     
     // isAgreementRead
-    WA_API.isAgreementRead = NO;
     
     // submit button
     _submitBtn.layer.cornerRadius = 5.0f;
@@ -59,7 +59,7 @@
 
 // 更新勾选框视图
 - (void)updateCheckBox {
-    if (WA_API.isAgreementRead) {
+    if ([WA_API isAgreementRead]) {
         _submitBtn.enabled = YES;
         [_checkBtn setImage:[UIImage imageNamed:@"btn_hook_on"] forState:UIControlStateNormal];
         _submitBtn.backgroundColor = HexRGB(THEME_BLUE);
@@ -127,7 +127,9 @@
 
 // 点击勾选框
 - (IBAction)tapInCheckBox:(UIButton *)sender {
-    WA_API.isAgreementRead = !WA_API.isAgreementRead;
+    if ([WA_API isAgreementRead] == NO) {
+        [WA_API changeAgreement];
+    }
     [self updateCheckBox];
 }
 
@@ -176,6 +178,11 @@
                         pass:_textField4.text callback:^(id obj) {
                             NSDictionary *info = (NSDictionary *)obj;
                             if ([info[@"result"] boolValue]) {
+                                // 保存用户
+                                [RichKeyChain keyChainSaveKey:WATOKEN_USER value:wSelf.textField2.text];
+                                // 创建用户并保存密码
+                                WA_API.user = [RichUser userWithUserID:wSelf.textField2.text];
+                                [WA_API savePrivateKey:info[@"pkey"]];
                                 [self.navigationController popToRootViewControllerAnimated:YES];
                             } else {
                                 [wSelf warningMessage:info[@"message"]];

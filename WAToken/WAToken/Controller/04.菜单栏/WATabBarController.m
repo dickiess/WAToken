@@ -10,6 +10,7 @@
 #import "WATabBar.h"
 
 #import "WAMainPageVC.h"
+#import "WATransferVC.h"
 
 #import "WAServer.h"
 
@@ -60,12 +61,11 @@
                              tag:1];
     
     
-    _vc2 = [[UIViewController alloc] init];
-    _vc2.view.backgroundColor = [UIColor orangeColor];
+    _vc2 = [[WATransferVC alloc] init];
     [self addChildViewController:_vc2
                            title:@"传输"
-                           image:[UIImage imageNamed:@"tab_ico_ablum_up"]
-                  selecetedImage:[UIImage imageNamed:@"tab_ico_ablum_dn"]
+                           image:[UIImage imageNamed:@"tab_ico_trans_up"]
+                  selecetedImage:[UIImage imageNamed:@"tab_ico_trans_dn"]
                              tag:2];
     
     _vc3 = [[UIViewController alloc] init];

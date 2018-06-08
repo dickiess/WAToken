@@ -72,6 +72,42 @@ static UIAlertView *_warnningMsg = nil;
     return NO;
 }
 
+// 是否已经阅读同意
+- (BOOL)isAgreementRead {
+    NSUserDefaults *udf = [NSUserDefaults standardUserDefaults];
+    if (! [udf boolForKey:@"Agreed"]) {
+        [udf setBool:NO forKey:@"Agreed"];
+        [udf synchronize];
+    }
+    return [udf boolForKey:@"Agreed"];
+}
+
+// 阅读同意修改
+- (BOOL)changeAgreement {
+    NSUserDefaults *udf = [NSUserDefaults standardUserDefaults];
+    BOOL isAgreement = ! [udf boolForKey:@"Agreed"];
+    [udf setBool:isAgreement forKey:@"Agreed"];
+    [udf synchronize];
+    return isAgreement;
+}
+
+// 保存密钥
+- (void)savePrivateKey:(NSString *)pKey {
+    NSUserDefaults *udf = [NSUserDefaults standardUserDefaults];
+    [udf setObject:pKey forKey:WATOKEN_PRI_KEY];
+    [udf synchronize];
+}
+
+// 获取密钥
+- (NSString *)getPrivateKey {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:WATOKEN_PRI_KEY];
+}
+
+// 删除密钥
+- (void)removePrivateKey {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:WATOKEN_PRI_KEY];
+}
+
 // 拨打电话
 - (void)telephoneCall:(NSString *)callNumber {
     NSString *call = [NSString stringWithFormat:@"tel:%@", callNumber];
@@ -88,6 +124,7 @@ static UIAlertView *_warnningMsg = nil;
     if ([name isEqualToString:@"rzsoft"] &&
         [pass isEqualToString:@"123456"]) {
         [rlt setObject:[NSNumber numberWithBool:YES] forKey:@"result"];
+        [rlt setObject:@"QWERTYUIOP^LKJHGFDSA_ZXCVBNM" forKey:@"pkey"];
     }
     else {
         [rlt setObject:[NSNumber numberWithBool:NO] forKey:@"result"];

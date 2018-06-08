@@ -20,7 +20,7 @@
 }
 
 // 创建用户
-+ (RichUser *)userWithUserID:(NSString *)userID andSecretCode:(NSString *)secrectCode {
++ (RichUser *)userWithUserID:(NSString *)userID {
     RichUser *user = [[RichUser alloc] init];
     user.userID = userID;
     NSString *folderPath = [NSString stringWithFormat:@"%@_", user.userID];

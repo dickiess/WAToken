@@ -45,7 +45,7 @@
 
 // 系统尺寸
 #define STATUS_BAR_HEIGHT  (IOS7_OR_LATER ? 20.0f : 40.0f)
-#define NAVI_BAR_HEIGHT    (50.0f)
+#define NAVI_BAR_HEIGHT    (60.0f)
 #define TAB_BAR_HEIGHT     (50.0f)
 #define LR_GAP             (10.0f)
 

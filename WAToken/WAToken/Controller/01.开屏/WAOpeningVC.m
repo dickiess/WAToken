@@ -16,6 +16,7 @@
 
 @interface WAOpeningVC ()
 
+@property (nonatomic, assign) BOOL reload;
 @property (nonatomic, assign) NSInteger countdownNumber;
 @property (nonatomic, strong) NSTimer *timer;
 @property (weak, nonatomic)   IBOutlet UILabel *countdownLabel;
@@ -42,17 +43,28 @@
     NSLog(@"=== WAOpeningVC ===");
     
     // 如果没有登陆用户，前往登陆页面
-    if ([RichKeyChain keyChainReadKey:@"WATokenUser"] == nil) {
+    NSString *pUser = [RichKeyChain keyChainReadKey:WATOKEN_USER];
+    NSString *pKey  = [WA_API getPrivateKey];
+//    NSLog(@"=== user: %@, key: %@", pUser, pKey);
+    if (pUser == nil || pKey == nil) {
+        _reload = YES;
         _countdownLabel.hidden = YES;
         [NSObject performAfterDelay:0.5f withBlock:^{
-//            [self gotoLoginVC];
-            [self gotoMainVC];
+            [self gotoLoginVC];
         }];
     }
-    // 登录用户3秒钟广告时间
     else {
-        _countdownLabel.hidden = NO;
-        _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
+        // 用户登陆或注册成功，直接进入主页面
+        if (_reload) {
+            [self gotoMainVC];
+        }
+        // 用户重新访问，计数后进入主页
+        else {
+            WA_API.user = [RichUser userWithUserID:pUser];
+            _countdownLabel.hidden = NO;
+            _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
+        }
+
     }
 }
 
@@ -64,6 +76,7 @@
 
 - (void)initState {
     _countdownNumber = 3;
+    _reload = NO;
 }
 
 // 计数

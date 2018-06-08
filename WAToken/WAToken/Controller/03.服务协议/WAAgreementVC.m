@@ -39,11 +39,7 @@
 
 - (void)initUI {
     // read button
-    if ([WA_API isAgreementRead]) {
-        _readBtn.hidden = YES;
-    } else {
-        _readBtn.hidden = NO;
-    }
+    _readBtn.hidden = [WA_API isAgreementRead];
     
     // web view
     NSString *path = [[NSBundle mainBundle] pathForResource:@"protocol_cn" ofType:@"html"];
@@ -75,7 +71,9 @@
 
 // 点击同意
 - (IBAction)tapForAgree:(UIButton *)sender {
-    WA_API.isAgreementRead = YES;
+    if ([WA_API isAgreementRead] == NO) {
+        [WA_API changeAgreement];
+    }
     [self.navigationController popViewControllerAnimated:NO];
 }
 

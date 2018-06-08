@@ -11,6 +11,7 @@
 
 #import "MyDevice.h"
 #import "UIColor+Art.h"
+#import "WAAppInfo.h"
 
 #define frameWidth      ([[UIScreen mainScreen] bounds].size.width)
 #define frameHeight     (frameWidth/3)
@@ -60,8 +61,8 @@
         CGRect processRect = CGRectMake(process_x, process_y, processWidth, processHeight);
         _progress = [RichProgressButton btnWithFrame:processRect
                                                title:@""
-                                     backgroundColor:HexRGB(0xF0F0F0)
-                                           fillColor:HexRGB(0x79C9C9)
+                                     backgroundColor:HexRGB(THEME_LIGHTGRAY)
+                                           fillColor:HexRGB(THEME_GREEN)
                                          borderWidth:0.5f
                                         cornerRadius:5.0f];
         [self addSubview:_progress];
@@ -107,20 +108,27 @@
     
     _progress.progress = _process;
     
+    _progress.textLabel.textColor = [UIColor whiteColor];
     if (self.process >= 0.95f) {
-//        _progress.backgroundColor = [UIColor redColor];
-        _progress.backgroundColor = HexRGB(0xF0F0F0);
+        _progress.backgroundColor = HexRGB(THEME_LIGHTGRAY);
+        _progress.fillColor = HexRGB(THEME_RED);
+    }
+    else if (self.process >= 0.90f) {
+        _progress.backgroundColor = HexRGB(THEME_LIGHTGRAY);
+        _progress.fillColor = HexRGB(THEME_ORANGE);
     }
     else if (self.process >= 0.85f) {
-//        _progress.backgroundColor = [UIColor orangeColor];
-        _progress.backgroundColor = HexRGB(0xF0F0F0);
+        _progress.backgroundColor = HexRGB(THEME_LIGHTGRAY);
+        _progress.fillColor = HexRGB(THEME_YELLOW);
+        _progress.textLabel.textColor = HexRGB(THEME_ORANGE);
     }
-    else if (self.process >= 0.75f) {
-//        _progress.backgroundColor = [UIColor yellowColor];
-        _progress.backgroundColor = HexRGB(0xF0F0F0);
+    else if (self.process >= 0.65f) {
+        _progress.backgroundColor = HexRGB(THEME_LIGHTGRAY);
+        _progress.fillColor = HexRGB(THEME_GREEN);
     }
     else {
-        _progress.backgroundColor = HexRGB(0xE0E0E0);
+        _progress.backgroundColor = HexRGB(THEME_GRAY);
+        _progress.fillColor = HexRGB(THEME_GREEN);
     }
     
 }

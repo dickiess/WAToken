@@ -26,6 +26,8 @@
 
 #import "DzhProcessHUD.h"
 
+#import "RichUser.h"
+
 /****************************************************************************************/
 
 #pragma mark - 单例
@@ -49,7 +51,7 @@ typedef void (^Callback)(id obj);
 
 @interface WAServer : NSObject
 
-@property (nonatomic, assign) BOOL isAgreementRead;
+@property (nonatomic, strong) RichUser *user;
 
 // 单例
 + (WAServer *)sharedInstance;
@@ -62,6 +64,21 @@ typedef void (^Callback)(id obj);
 
 // 是否首次使用
 - (BOOL)firstLauch;
+
+// 是否已经阅读同意
+- (BOOL)isAgreementRead;
+
+// 阅读同意修改
+- (BOOL)changeAgreement;
+
+// 保存密钥
+- (void)savePrivateKey:(NSString *)pKey;
+
+// 获取密钥
+- (NSString *)getPrivateKey;
+
+// 删除密钥
+- (void)removePrivateKey;
 
 // 拨打电话
 - (void)telephoneCall:(NSString *)callNumber;

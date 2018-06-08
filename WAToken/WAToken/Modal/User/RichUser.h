@@ -12,10 +12,10 @@
 @interface RichUser : NSObject
 
 @property (nonatomic, copy)   NSString *userID;         // 用户
-@property (nonatomic, copy)   NSString *userKey;        // 用户密钥
+//@property (nonatomic, copy)   NSString *userKey;        // 用户密钥
 @property (nonatomic, copy)   NSString *folderPath;     // 文件夹
 
 // 创建用户
-+ (RichUser *)userWithUserID:(NSString *)userID andSecretCode:(NSString *)secrectCode;
++ (RichUser *)userWithUserID:(NSString *)userID;
 
 @end
