@@ -24,10 +24,10 @@
 #define subTitleHeight  (frameHeight*22/125)         // 辅助文字尺寸参考高度22
 #define subTitle_x      (frameWidth * 8/125)         // 辅助文字X位置参考位置8
 #define subTitle_y      (frameHeight*50/125)         // 辅助文字Y位置参考位置50
-#define processWidth    (frameWidth*(125-8*2)/125)   // 辅助文字尺寸参考宽度109
-#define processHeight   (frameHeight*28/125)         // 辅助文字尺寸参考高度28
-#define process_x       (frameWidth * 8/125)         // 辅助文字X位置参考位置8
-#define process_y       (frameHeight*80/125)         // 辅助文字Y位置参考位置80
+#define processWidth    (frameWidth*(125-8*2)/125)   // 进度条尺寸参考宽度109
+#define processHeight   (frameHeight*28/125)         // 进度条尺寸参考高度28
+#define process_x       (frameWidth * 8/125)         // 进度条X位置参考位置8
+#define process_y       (frameHeight*80/125)         // 进度条Y位置参考位置80
 
 
 @interface WAWideGridButton ()

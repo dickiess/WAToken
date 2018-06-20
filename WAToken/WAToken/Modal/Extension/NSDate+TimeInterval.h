@@ -39,9 +39,9 @@ typedef enum {
 @interface NSDate (TimeInterval)
 
 // 不知道干嘛用的
-+ (NSDateComponents *)componetsWithTimeInterval:(NSTimeInterval)timeInterval;
+//+ (NSDateComponents *)componetsWithTimeInterval:(NSTimeInterval)timeInterval;
 
-// 不知道干嘛用的
+// 见 Tool/CTAssetsPicker/CTAssetsViewCell.m
 + (NSString *)timeDescriptionOfTimeInterval:(NSTimeInterval)timeInterval;
 
 // 解析数据时间

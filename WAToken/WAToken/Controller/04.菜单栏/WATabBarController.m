@@ -11,6 +11,7 @@
 
 #import "WAMainPageVC.h"
 #import "WATransferVC.h"
+#import "WAAssetAddVC.h"
 
 #import "WAServer.h"
 
@@ -20,10 +21,11 @@
 @property (nonatomic, assign) NSUInteger wSelectedIndex;  // 选中的item
 
 @property (nonatomic, strong) WAMainPageVC *vc1;
-@property (nonatomic, strong) UIViewController *vc2;
+@property (nonatomic, strong) WATransferVC *vc2;
 @property (nonatomic, strong) UIViewController *vc3;
 @property (nonatomic, strong) UIViewController *vc4;
 @property (nonatomic, strong) UIViewController *vc5;
+@property (nonatomic, strong) WAAssetAddVC *vc6;
 
 @end
 
@@ -91,7 +93,10 @@
                            image:[UIImage imageNamed:@"tab_ico_more_up"]
                   selecetedImage:[UIImage imageNamed:@"tab_ico_more_dn"]
                              tag:5];
-
+    
+    _vc6 = [[WAAssetAddVC alloc] init];
+    _vc6.view.backgroundColor = [UIColor whiteColor];
+    
     // tabbar
     _wTabBar = [[WATabBar alloc] init];
     [_wTabBar.centerBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -140,7 +145,7 @@
 
 // 添加按钮
 - (void)buttonAction:(UIButton *)sender {
-    NSLog(@"middle");
+    [self.navigationController pushViewController:_vc6 animated:NO];
 }
 
 

@@ -66,7 +66,6 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="OuN-DV-NVo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="35P-Cm-zzS"/>
                 <constraint firstAttribute="trailing" secondItem="irh-r7-kK0" secondAttribute="trailing" id="FGe-Yi-NR0"/>

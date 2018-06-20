@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
 /** 提交操作回调 */
 typedef void(^FormCompletion)(void);
 
-@interface SelwynFormBaseViewController : UIViewController
+@interface SelwynFormBaseViewController : ModelViewController
 
 /** baseTableView */
 @property (nonatomic, strong) UITableView *formTableView;

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIView  *backgroundView;
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, strong) UIColor *menuColor;
+@property (nonatomic, strong) UIColor *shadowColor;
 
 @property (nonatomic, strong) UITableView    *tableView;
 @property (nonatomic, strong) NSMutableArray *titles;
@@ -40,13 +41,11 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
-        CGRect rect = frame;
-        rect.origin = CGPointMake(0, frame.size.height);
-        rect.size.height = 1.0f;
-        UIView *line = [[UIView alloc] initWithFrame:rect];
-        line.backgroundColor = [UIColor lightGrayColor];
-        [self addSubview:line];
+        _backgroundColor = [UIColor whiteColor];
+        _shadowColor = HexRGB(0xFF6666);
+        _shadow = [self makeShadow];
+        [self addSubview:_shadow];
+//        [self addSubview:[self makeLine]];
     }
     return self;
 }
@@ -55,6 +54,7 @@
     CGRect rect = CGRectMake(pt.x, pt.y, frameWidth, frameHeight);
     WAPullDownMenu *wpm = [[WAPullDownMenu alloc] initWithFrame:rect];
     wpm.menuColor = color;
+    wpm.shadow.backgroundColor = wpm.shadowColor;
     wpm.list = list;
     [wpm initUI];
 
@@ -123,6 +123,24 @@
     return tableView;
 }
 
+- (UIView *)makeShadow {
+    CGRect rect = self.frame;
+    rect.origin = CGPointMake(5, self.frame.size.height - 3);
+    rect.size.width = self.frame.size.width / 2 - 10;
+    rect.size.height = 3.0f;
+    UIView *shadow = [[UIView alloc] initWithFrame:rect];
+    return shadow;
+}
+
+- (UIView *)makeLine {
+    CGRect rect = self.frame;
+    rect.origin = CGPointMake(0, self.frame.size.height);
+    rect.size.height = 1.0f;
+    UIView *grayline = [[UIView alloc] initWithFrame:rect];
+    grayline.backgroundColor = [UIColor lightGrayColor];
+    return grayline;
+}
+
 /************************************************************************************************/
 
 #pragma mark - datasource
@@ -161,6 +179,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self selectRow:indexPath.row];
+    CGRect rect = self.shadow.frame;
+    rect.origin = CGPointMake(5, self.frame.size.height - 3);
+    if (_currentIndex > 0) {
+        rect.origin.x += self.frame.size.width / 2;
+    }
+    [UIView animateWithDuration:0.2f animations:^{
+        self.shadow.frame = rect;
+    }];
+    
     if ([_pDelegate respondsToSelector:@selector(pullDownMenu:didSelectColumn:row:)]) {
         [_pDelegate pullDownMenu:self didSelectColumn:_currentIndex row:indexPath.row];
     }

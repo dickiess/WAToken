@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,27 +19,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="77.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-cy-zQ4">
-                        <rect key="frame" x="16" y="11" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FileName.docx" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-cy-zQ4">
+                        <rect key="frame" x="10" y="14" width="210" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="cRQ-q0-rTg"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te4-ES-Y1n">
-                        <rect key="frame" x="16" y="28" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文件: 00KB / 0.00MB     下载: 000KB/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjb-Kv-nvG">
+                        <rect key="frame" x="10" y="54" width="244" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="rti-e8-7Jx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-Z9-1P1">
-                        <rect key="frame" x="16" y="48" width="288" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-XX-m6a">
+                        <rect key="frame" x="258" y="26.5" width="26" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="LOG-oO-PTf"/>
+                            <constraint firstAttribute="height" constant="25" id="oQW-5B-gW8"/>
+                        </constraints>
+                        <state key="normal" image="btn_preview"/>
+                        <connections>
+                            <action selector="moreAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qUY-FZ-YdY"/>
+                        </connections>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="r6D-cy-zQ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="A04-ON-gN4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wMD-XX-m6a" secondAttribute="trailing" constant="20" id="Iyw-pT-b8Y"/>
+                    <constraint firstItem="r6D-cy-zQ4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="UDZ-wl-mm6"/>
+                    <constraint firstAttribute="trailing" secondItem="r6D-cy-zQ4" secondAttribute="trailing" constant="100" id="eUz-dj-cF5"/>
+                    <constraint firstItem="wMD-XX-m6a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pL4-Nc-cw6"/>
+                    <constraint firstItem="Mjb-Kv-nvG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rYf-X8-Dpe"/>
+                    <constraint firstItem="Mjb-Kv-nvG" firstAttribute="top" secondItem="r6D-cy-zQ4" secondAttribute="bottom" id="rua-m5-sDv"/>
+                    <constraint firstAttribute="trailing" secondItem="Mjb-Kv-nvG" secondAttribute="trailing" constant="66" id="zGP-bU-Icy"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="Mjb-Kv-nvG" id="79p-tU-VLc"/>
+                <outlet property="filenameLabel" destination="r6D-cy-zQ4" id="yeH-IR-sG7"/>
+                <outlet property="moreBtn" destination="wMD-XX-m6a" id="LkB-eH-sjc"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="btn_preview" width="25" height="25"/>
+    </resources>
 </document>

@@ -31,7 +31,6 @@
 @implementation NSDate (TimeInterval)
 
 + (NSDateComponents *)componetsWithTimeInterval:(NSTimeInterval)timeInterval {
-    
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDate *date1 = [[NSDate alloc] init];
@@ -45,7 +44,6 @@
 }
 
 + (NSString *)timeDescriptionOfTimeInterval:(NSTimeInterval)timeInterval {
-    
     NSDateComponents *components = [self.class componetsWithTimeInterval:timeInterval];
     long h = (long)components.hour;
     long m = (long)components.minute;

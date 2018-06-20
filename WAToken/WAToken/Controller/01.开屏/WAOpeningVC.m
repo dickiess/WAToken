@@ -37,6 +37,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
@@ -64,7 +66,6 @@
             _countdownLabel.hidden = NO;
             _timer = [Utilities timerRepeatSeconds:1.0f target:self selector:@selector(countDown:)];
         }
-
     }
 }
 
@@ -85,7 +86,7 @@
         _countdownNumber --;
         int c = (int)_countdownNumber;
         NSLog(@"跳转还剩%d秒", c);
-        _countdownLabel.text = [NSString stringWithFormat:@"跳转还剩%d秒", c];
+        _countdownLabel.text = [NSString stringWithFormat:@"%ds", c];
     }
     else {
         [self removeTimer];

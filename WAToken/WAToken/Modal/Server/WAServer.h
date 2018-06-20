@@ -15,6 +15,7 @@
 #import "Utilities.h"
 
 #import "WAAppInfo.h"
+#import "WATokenApi.h"
 
 #import "NSDate+TimeInterval.h"
 #import "NSObject+PerformBlockAfterDelay.h"

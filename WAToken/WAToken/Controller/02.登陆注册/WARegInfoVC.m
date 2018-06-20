@@ -1,12 +1,12 @@
 //
-//  WARegisterVC.m
-//  watoken
+//  WARegInfoVC.m
+//  WAToken
 //
-//  Created by dizhihao on 2018/5/21.
+//  Created by dizhihao on 2018/6/20.
 //  Copyright © 2018 dizhihao. All rights reserved.
 //
 
-#import "WARegisterVC1.h"
+#import "WARegInfoVC.h"
 
 #import "SelwynFormSectionItem.h"
 #import "SelwynFormItem.h"
@@ -20,7 +20,7 @@ typedef void(^EditCompletion)(void);
 
 /*****************************************************************************************************/
 
-@interface WARegisterVC1 () <UIActionSheetDelegate>
+@interface WARegInfoVC () <UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSArray *genders;
 @property (nonatomic, strong) UIButton *editBtn;
@@ -28,13 +28,11 @@ typedef void(^EditCompletion)(void);
 
 @end
 
-/*****************************************************************************************************/
-
-@implementation WARegisterVC1
+@implementation WARegInfoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
     
     [self initUI];
 }
@@ -47,17 +45,15 @@ typedef void(^EditCompletion)(void);
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"=== WARegisterVC ===");
-    
+    NSLog(@"=== WARegInfoVC ===");
 }
 
 - (void)initUI {
-    
     // title
-    self.title = @"新用户注册";
+    self.title = @"个人信息";
     
     // gender
-    _genders = @[@"男", @"女"];
+    self.genders = @[@"男", @"女"];
     
     // data source
     [self dataSource];
@@ -72,14 +68,16 @@ typedef void(^EditCompletion)(void);
     
     UIBarButtonItem *editItem = [[UIBarButtonItem alloc]initWithCustomView:_editBtn];
     self.navigationItem.rightBarButtonItem = editItem;
+    
+    // user info
+    NSLog(@"user info%@", _userInfo);
 }
 
 - (void)dataSource {
-
     // base info
     NSMutableArray *baseInfo = [NSMutableArray array];
     
-    SelwynFormItem *name = SelwynDetailItemMake(@"真实姓名", @"", @"(必填)", SelwynFormCellTypeInput);
+    SelwynFormItem *name = SelwynDetailItemMake(@"用户名", @"", @"(必填)", SelwynFormCellTypeInput);
     [baseInfo addObject:name];
     SelwynFormItem *gender = SelwynDetailItemMake(@"性别", @"男", @"(必填)", SelwynFormCellTypeSelect);
     [baseInfo addObject:gender];
@@ -169,5 +167,6 @@ typedef void(^EditCompletion)(void);
         self.editCompletion();
     }
 }
+
 
 @end

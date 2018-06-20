@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface WARegisterVC : UIViewController
+@interface WARegisterVC : ModelViewController
 
 // 测试注册
 - (void)testRegister;

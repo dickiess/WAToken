@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface WAOpeningVC : UIViewController
+@interface WAOpeningVC : ModelViewController
 
 @end

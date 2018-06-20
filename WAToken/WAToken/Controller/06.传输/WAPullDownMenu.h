@@ -21,6 +21,7 @@
 @interface WAPullDownMenu : UIView
 
 @property (nonatomic, strong) id<WAPullDownMenuDelegate> pDelegate;
+@property (nonatomic, strong) UIView  *shadow;
 
 + (WAPullDownMenu *)menuWithList:(NSArray *)list position:(CGPoint)pt selectedColor:(UIColor *)color;
 
