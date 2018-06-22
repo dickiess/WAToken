@@ -77,7 +77,6 @@
     }
 }
 
-
 /*****************************************************************************************************/
 
 #pragma mark - delegate
@@ -219,6 +218,21 @@
 
 // 注册
 - (IBAction)submit:(UIButton *)sender {
+    // 下级页面调试
+    _userInfo = [NSMutableDictionary dictionary];
+    [_userInfo setObject:[NSNumber numberWithInteger:1001] forKey:@"code"];
+    [_userInfo setObject:@"dizhihao" forKey:@"name"];
+    [_userInfo setObject:@"18621835489" forKey:@"mobile"];
+    [_userInfo setObject:[NSNumber numberWithInteger:1] forKey:@"gender"];
+    [_userInfo setObject:@"" forKey:@"ident"];
+    [_userInfo setObject:[NSNumber numberWithInteger:-1] forKey:@"region_id"];
+    [_userInfo setObject:[NSNumber numberWithInteger:-1] forKey:@"city_id"];
+    [_userInfo setObject:@"" forKey:@"email"];
+    [_userInfo setObject:[NSNumber numberWithInteger:1529462279] forKey:@"create_time"];
+    [_userInfo setObject:[NSNumber numberWithInteger:0] forKey:@"last_login"];
+    [self gotoUserInfo];
+    return;
+    
     // 输入控制
     if ([self textFieldCheck] == NO) {
         return;
@@ -244,6 +258,8 @@
 //                            }
 //                        }];
     
+
+    
     // 请求中
     if (_isLoading == YES) {
         return;
@@ -264,7 +280,6 @@
 - (void)gotoUserInfo {
     if (_userInfo == nil) {
         return;
-        
     }
     WARegInfoVC *infoVC = [[WARegInfoVC alloc] init];
     infoVC.userInfo = _userInfo;

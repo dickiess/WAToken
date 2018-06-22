@@ -27,7 +27,7 @@
 
 /** 数据源 */
 - (NSMutableArray *)mutableArray {
-    if (!_mutableArray) {
+    if (_mutableArray == nil) {
         _mutableArray = [NSMutableArray array];
     }
     return _mutableArray;
@@ -56,7 +56,9 @@
     // 创建formTableView
     UITableViewController *tableViewController = [[UITableViewController alloc] initWithStyle:_style];
     [self addChildViewController:tableViewController];
-    [tableViewController.view setFrame:self.view.bounds];
+    CGRect rect = self.view.bounds;
+    rect.origin = CGPointMake(0, NAVI_BAR_HEIGHT);
+    tableViewController.view.frame = rect;
     
     _formTableView = tableViewController.tableView;
     _formTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
@@ -64,21 +66,20 @@
     _formTableView.delegate = self;
     _formTableView.showsVerticalScrollIndicator = NO;
     _formTableView.showsHorizontalScrollIndicator = NO;
-    _formTableView.backgroundColor = [UIColor whiteColor];
+    _formTableView.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:_formTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+//    self.navigationController.navigationBar.hidden = NO;
+//    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES;
 }
 
 /*****************************************************************************************************/
@@ -100,27 +101,27 @@
     SelwynFormSectionItem *sectionItem = self.mutableArray[indexPath.section];
     SelwynFormItem *item = sectionItem.cellItems[indexPath.row];
     
-    //根据条目cellType创建不同cell
+    // 根据条目cellType创建不同cell
+    // 输入型
     if (item.formCellType == SelwynFormCellTypeTextViewInput) {
-        
         static NSString *cell_id = @"textViewInputCell_id";
         SelwynFormTextViewInputTableViewCell *cell = [tableView formTextViewInputCellWithId:cell_id];
         cell.formItem = item;
         cell.formTextViewInputCompletion = ^(NSString *text) {
-          
             [weakSelf updateFormTextViewInputWithText:text indexPath:indexPath];
         };
         return cell;
         
-    } else if (item.formCellType == SelwynFormCellTypeSelect) {
-        
+    }
+    // 选择型
+    else if (item.formCellType == SelwynFormCellTypeSelect) {
         static NSString *cell_id = @"selectCell_id";
         SelwynFormSelectTableViewCell *cell = [tableView formSelectCellWithId:cell_id];
         cell.formItem = item;
         return cell;
     }
+    // 附件型
     else if (item.formCellType == SelwynFormCellTypeAttachment) {
-        
         static NSString *cell_id = @"attachmentCell_id";
         SelwynFormAttachmentTableViewCell *cell = [tableView formAttachmentCellWithId:cell_id];
         cell.formItem = item;
@@ -129,6 +130,7 @@
         };
         return cell;
     }
+    // 其他型
     else {
         static NSString *cell_id = @"inputCell_id";
         SelwynFormInputTableViewCell *cell = [tableView formInputCellWithId:cell_id];
@@ -140,14 +142,12 @@
     }
 }
 
-
 /**
  更新附件
  @param images 图片数组
  @param indexPath indexPath
  */
-- (void)updatedAttachments:(NSArray *)images indexPath:(NSIndexPath *)indexPath{
-    
+- (void)updatedAttachments:(NSArray *)images indexPath:(NSIndexPath *)indexPath {
     SelwynFormSectionItem *sectionModel = self.mutableArray[indexPath.section];
     SelwynFormItem *item = sectionModel.cellItems[indexPath.row];
     item.images = images;
@@ -158,8 +158,7 @@
  @param text 输入内容
  @param indexPath indexPath
  */
-- (void)updateFormInputWithText:(NSString *)text indexPath:(NSIndexPath *)indexPath{
-    
+- (void)updateFormInputWithText:(NSString *)text indexPath:(NSIndexPath *)indexPath {
     SelwynFormSectionItem *sectionItem = self.mutableArray[indexPath.section];
     SelwynFormItem *item = sectionItem.cellItems[indexPath.row];
     item.formDetail = text;
@@ -171,7 +170,6 @@
  @param indexPath indexPath
  */
 - (void)updateFormTextViewInputWithText:(NSString *)text indexPath:(NSIndexPath *)indexPath {
-    
     SelwynFormSectionItem *sectionItem = self.mutableArray[indexPath.section];
     SelwynFormItem *item = sectionItem.cellItems[indexPath.row];
     item.formDetail = text;
@@ -201,8 +199,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     SelwynFormSectionItem *sectionItem = self.mutableArray[section];
-    UIView *header
-    = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionItem.headerHeight)];
+    CGRect rect = self.view.bounds;
+    rect.size.height = sectionItem.headerHeight;
+    UIView *header = [[UIView alloc] initWithFrame:rect];
     header.backgroundColor = sectionItem.headerColor;
     
     if (sectionItem.headerTitle) {
@@ -262,7 +261,7 @@
     [commitButton sizeToFit];
     [commitButton addTarget:self action:@selector(commit) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *commitItem = [[UIBarButtonItem alloc]initWithCustomView:commitButton];
+    UIBarButtonItem *commitItem = [[UIBarButtonItem alloc] initWithCustomView:commitButton];
     self.navigationItem.rightBarButtonItem = commitItem;
 }
 

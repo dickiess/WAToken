@@ -77,8 +77,8 @@ CGFloat const DefaultTextViewHeight = 200.0f;
 
 /** 获取文字CGSize */
 + (CGSize)getSizeWithString:(NSString *)string Font:(UIFont *)font maxSize:(CGSize)maxSize {
-    NSStringDrawingOptions options
-    = NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    NSStringDrawingOptions options = (NSStringDrawingUsesLineFragmentOrigin |
+                                      NSStringDrawingUsesFontLeading);
     CGRect rect = [string boundingRectWithSize:maxSize
                                        options:options
                                     attributes:@{NSFontAttributeName:font}
@@ -87,20 +87,20 @@ CGFloat const DefaultTextViewHeight = 200.0f;
 }
 
 /** 校验表单内容 */
-+ (SelwynFormItem *)checkContentWithItem:(SelwynFormItem *)item{
-    
++ (SelwynFormItem *)checkContentWithItem:(SelwynFormItem *)item {
     item.formError = @"";
     if (item.required) {
         if (!item.formDetail || [item.formDetail isEqualToString:@""]) {
-         
-            if (item.formCellType == SelwynFormCellTypeInput || item.formCellType == SelwynFormCellTypeTextViewInput) {
+            if (item.formCellType == SelwynFormCellTypeInput ||
+                item.formCellType == SelwynFormCellTypeTextViewInput) {
                 item.formError = [NSString stringWithFormat:@"请输入%@",item.formTitle];
-                
-            }else if (item.formCellType == SelwynFormCellTypeSelect){
+            }
+            else if (item.formCellType == SelwynFormCellTypeSelect) {
                 item.formError = [NSString stringWithFormat:@"请选择%@",item.formTitle];
             }
         }
     }
+    
     return item;
 }
 

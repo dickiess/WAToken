@@ -27,8 +27,7 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
 
 @implementation SelwynExpandableTextView
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         [self preparePlaceholder];
@@ -37,28 +36,31 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
-{
+
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
         [self preparePlaceholder];
     }
     return self;
 }
+
 #else
-- (id)initWithFrame:(CGRect)frame
-{
+
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self preparePlaceholder];
     }
     return self;
 }
+
 #endif
 
-- (void)preparePlaceholder
-{
-    NSAssert(!self._placeholderTextView, @"placeholder has been prepared already: %@", self._placeholderTextView);
+- (void)preparePlaceholder {
+    NSAssert(! self._placeholderTextView,
+             @"placeholder has been prepared already: %@",
+             self._placeholderTextView);
     // the label which displays the placeholder
     // needs to inherit some properties from its parent text view
     
@@ -132,39 +134,34 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)setPlaceholder:(NSString *)placeholderText
-{
+- (void)setPlaceholder:(NSString *)placeholderText {
     _placeholder = [placeholderText copy];
     _attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderText];
     
     [self resizePlaceholderFrame];
 }
 
-- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholderText
-{
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholderText {
     _placeholder = attributedPlaceholderText.string;
     _attributedPlaceholder = [attributedPlaceholderText copy];
     
     [self resizePlaceholderFrame];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
     self._placeholderTextView.textAlignment = self.textAlignment;
     [self resizePlaceholderFrame];
 }
 
-- (void)resizePlaceholderFrame
-{
+- (void)resizePlaceholderFrame {
     CGRect frame = self._placeholderTextView.frame;
     frame.size = self.bounds.size;
     self._placeholderTextView.frame = frame;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
+                        change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:kAttributedPlaceholderKey]) {
         self._placeholderTextView.attributedText = [change valueForKey:NSKeyValueChangeNewKey];
     }
@@ -203,30 +200,24 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor
-{
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor {
     self._placeholderTextView.textColor = placeholderTextColor;
 }
 
-- (UIColor *)placeholderTextColor
-{
+- (UIColor *)placeholderTextColor {
     return self._placeholderTextView.textColor;
 }
 
-- (void)textDidChange:(NSNotification *)aNotification
-{
+- (void)textDidChange:(NSNotification *)aNotification {
     [self setPlaceholderVisibleForText:self.text];
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
     [self setPlaceholderVisibleForText:self.text];
-    
     return [super becomeFirstResponder];
 }
 
-- (void)setPlaceholderVisibleForText:(NSString *)text
-{
+- (void)setPlaceholderVisibleForText:(NSString *)text {
     if (text.length < 1) {
         if (self.fadeTime > 0.0) {
             if (![self._placeholderTextView isDescendantOfView:self]) {
@@ -256,8 +247,7 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeObserver:self forKeyPath:kAttributedPlaceholderKey];
     [self removeObserver:self forKeyPath:kPlaceholderKey];
